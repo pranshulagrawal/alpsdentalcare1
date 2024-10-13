@@ -10,6 +10,18 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="/assets/css/style.css" as="style" />
+    <link rel="preload" href="/assets/css/responsive.css" as="style" />
+
+    <!-- Load essential CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="preload" href="/assets/css/flaticon_doral.css" as="style" />
+    <link rel="stylesheet" href="/assets/css/flaticon_doral.css" />
+
+    <!-- Lazy load non-critical CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -30,22 +42,83 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>React App</title>
+
+    <!-- Preload critical JS -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.2/index.min.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/scrollcue@2.0.0/scrollCue.min.js"
+      as="script"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-parallax-js/5.6.2/simpleParallax.min.js"
+      as="script"
+    />
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- Defer non-essential JS libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"
+      defer
+    ></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
       integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
+
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.2/feather.min.js"
-      integrity="sha512-zMm7+ZQ8AZr1r3W8Z8lDATkH05QG5Gm2xc6MlsCdBz9l6oE8Y7IXByMgSm/rdRQrhuHt99HAYfMljBOEZ68q5A=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.2/index.min.js"
+      integrity="sha512-1DCtVD7ZP7vFEF3mBoGRE/zPMmobIVZ59wTOFshEFe2FxUvB+52xj6hfYV6Jn5yX9JaFFQMtaw6aKc1C8sdgig=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/scrollcue@2.0.0/scrollCue.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/simple-parallax-js/5.6.2/simpleParallax.min.js"
+      integrity="sha512-rLJmRoYJNB5AXXLAElKPeaSrcXDUTA41fiwTZ+S2JJXhMoWu4yQZvXlZZSIjRNVHYTkIYYw+r45wXCao49D5XA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+
+    <!-- Local JS files -->
+    <script src="/assets/js/main.js" defer></script>
   </body>
 </html>
