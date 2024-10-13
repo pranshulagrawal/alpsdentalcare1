@@ -27,5 +27,88 @@
     { "platform": "Twitter", "url": "https://twitter.com/yourprofile" },
     { "platform": "Instagram", "url": "https://instagram.com/yourprofile" },
     { "platform": "Linkedin", "url": "https://linkedin.com/in/yourprofile" }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Dental Care Redefined: A Deep Dive Into Our Services",
+      "image": "assets/images/blog/blog1.jpg",
+      "authorImage": "assets/images/user/img1.png",
+      "category": "DENTAL",
+      "date": "10 Apr, 2024",
+      "content": "Explore our comprehensive dental care services that cater to all your needs."
+    },
+    {
+      "id": 2,
+      "title": "Unlocking Your Best Smile: Tips From Best Dentistry",
+      "image": "assets/images/blog/blog2.jpg",
+      "authorImage": "assets/images/user/img2.png",
+      "category": "DENTAL",
+      "date": "5 Feb, 2024",
+      "content": "Get insights into maintaining your oral health and achieving the perfect smile."
+    },
+    {
+      "id": 3,
+      "title": "How Dental Implants Can Transform Your Smile",
+      "image": "assets/images/blog/blog3.jpg",
+      "authorImage": "assets/images/user/img3.png",
+      "category": "DENTAL",
+      "date": "29 Jan, 2024",
+      "content": "Learn how dental implants can change your life and improve your confidence."
+    },
+    {
+      "id": 4,
+      "title": "From Check-ups To Smile: Exploring Our Services",
+      "image": "assets/images/blog/blog4.jpg",
+      "authorImage": "assets/images/user/img4.png",
+      "category": "DENTAL",
+      "date": "18 May, 2024",
+      "content": "A deep dive into the dental services we provide, ensuring you receive the best care."
+    },
+    {
+      "id": 5,
+      "title": "The Road To A Brighter Smile: Your Dental Experience",
+      "image": "assets/images/blog/blog5.jpg",
+      "authorImage": "assets/images/user/img5.png",
+      "category": "DENTAL",
+      "date": "29 Jun, 2024",
+      "content": "Experience a journey to better dental health with our dedicated team."
+    },
+    {
+      "id": 6,
+      "title": "Navigating a Healthy Smile Journey: Tips",
+      "image": "assets/images/blog/blog6.jpg",
+      "authorImage": "assets/images/user/img6.png",
+      "category": "DENTAL",
+      "date": "21 May, 2024",
+      "content": "Discover tips for maintaining a healthy smile throughout your life."
+    },
+    {
+      "id": 7,
+      "title": "Understanding Gum Disease: Causes And Treatments",
+      "image": "assets/images/blog/blog7.jpg",
+      "authorImage": "assets/images/user/img7.png",
+      "category": "DENTAL",
+      "date": "27 Apr, 2024",
+      "content": "Educate yourself on gum disease, its causes, and how to treat it effectively."
+    },
+    {
+      "id": 8,
+      "title": "All About Dental Veneers: Enhance Your Smile",
+      "image": "assets/images/blog/blog8.jpg",
+      "authorImage": "assets/images/user/img8.png",
+      "category": "DENTAL",
+      "date": "7 Feb, 2024",
+      "content": "Find out how dental veneers can improve your smile and confidence."
+    },
+    {
+      "id": 9,
+      "title": "Tips for Maintaining Oral Health During Pregnancy",
+      "image": "assets/images/blog/blog9.jpg",
+      "authorImage": "assets/images/user/img9.png",
+      "category": "DENTAL",
+      "date": "5 Jun, 2024",
+      "content": "Learn how to care for your oral health during pregnancy for you and your baby."
+    }
   ]
 }

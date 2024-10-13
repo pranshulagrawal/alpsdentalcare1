@@ -82,6 +82,16 @@ const Nabar = () => {
               </li>
               <li className="nav-item">
                 <a
+                  onClick={() => handleLinkClick("/blog")}
+                  className={`nav-link ${
+                    activeLink === "/blog" ? "active" : ""
+                  }`}
+                >
+                  BLOG
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
                   onClick={() => handleLinkClick("/contact-us")}
                   className={`nav-link ${
                     activeLink === "/contact-us" ? "active" : ""

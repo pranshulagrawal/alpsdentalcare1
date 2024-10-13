@@ -173,28 +173,6 @@ const Aboutus = () => {
       </div>
       {/* <!-- End About Wrap Area -->
 
-    <!-- Start Advertise Area --> */}
-      <div class="advertise-area ptb-150">
-        <div class="container-fluid">
-          <div class="advertise-view-content">
-            <h1>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span class="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span class="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span class="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span class="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span class="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-            </h1>
-          </div>
-        </div>
-      </div>
-      {/* <!-- End Advertise Area -->
-
     <!-- Start Video Area --> */}
       <div class="video-area bgImageParallax">
         <div class="container">

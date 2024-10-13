@@ -5,7 +5,8 @@ import Services from "../components/Services";
 import AboutUs from "../components/AboutUs";
 import ContactUs from "../components/ContactUs";
 import Appointment from "../components/Appointment";
-// import RealResult from "../components/RealResult";
+import Blog from "../components/Blog/blogsection";
+import BlogDetails from "../components/Blog/blog-detail";
 import Nabar from "../components/Navbar";
 import Footer from "../components/footer";
 const AppRoutes = () => {
@@ -18,6 +19,8 @@ const AppRoutes = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/appointment" element={<Appointment />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" component={<BlogDetails />} />
         {/* 
         
         <Route path="/contact-us" element={<ContactUs />} />
