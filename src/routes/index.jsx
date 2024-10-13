@@ -10,6 +10,7 @@ import BlogDetails from "../components/Blog/blog-detail";
 import Nabar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Preloader from "../components/Preloader";
+import Error from "../components/Error";
 
 const AppRoutes = () => {
   const [loading, setLoading] = useState(true); // Initially true for the first load
@@ -45,6 +46,7 @@ const AppRoutes = () => {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       )}
       <Footer />

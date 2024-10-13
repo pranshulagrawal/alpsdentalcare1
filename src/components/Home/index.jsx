@@ -7,7 +7,6 @@ import { faSuitcaseMedical } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import Testimonial from "../Testimonial";
-
 const Home = () => {
   return (
     <>

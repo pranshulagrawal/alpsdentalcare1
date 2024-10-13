@@ -79,7 +79,7 @@ const BlogDetail = () => {
                     {/* Assuming your blog data has a readTime property */}
                   </li>
                   <li>
-                    <a href="blog-style-one.html" className="tag-btn">
+                    <a href="#" className="tag-btn">
                       {blog.tag}{" "}
                       {/* Assuming your blog data has a tag property */}
                     </a>
