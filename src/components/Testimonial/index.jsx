@@ -59,7 +59,7 @@ const Testimonial = () => {
                 </p>
                 <div class="info">
                   <div class="title">
-                    <img src="assets/images/user/img1.png" alt="image" />
+                    <img src="assets/images/user/img1.jpg" alt="image" />
                     <h5>Allison Hayes</h5>
                   </div>
                   <div class="quote">
@@ -94,7 +94,7 @@ const Testimonial = () => {
                 </p>
                 <div class="info">
                   <div class="title">
-                    <img src="assets/images/user/img2.png" alt="image" />
+                    <img src="assets/images/user/img2.jpg" alt="image" />
                     <h5>Samantha Hernandez</h5>
                   </div>
                   <div class="quote">
@@ -130,7 +130,7 @@ const Testimonial = () => {
                 </p>
                 <div class="info">
                   <div class="title">
-                    <img src="assets/images/user/img3.png" alt="image" />
+                    <img src="assets/images/user/img3.jpg" alt="image" />
                     <h5>Christopher Taylor</h5>
                   </div>
                   <div class="quote">
@@ -166,7 +166,7 @@ const Testimonial = () => {
                 </p>
                 <div class="info">
                   <div class="title">
-                    <img src="assets/images/user/img1.png" alt="image" />
+                    <img src="assets/images/user/img1.jpg" alt="image" />
                     <h5>Allison Hayes</h5>
                   </div>
                   <div class="quote">
@@ -201,7 +201,7 @@ const Testimonial = () => {
                 </p>
                 <div class="info">
                   <div class="title">
-                    <img src="assets/images/user/img2.png" alt="image" />
+                    <img src="assets/images/user/img2.jpg" alt="image" />
                     <h5>Samantha Hernandez</h5>
                   </div>
                   <div class="quote">
@@ -237,7 +237,7 @@ const Testimonial = () => {
                 </p>
                 <div class="info">
                   <div class="title">
-                    <img src="assets/images/user/img3.png" alt="image" />
+                    <img src="assets/images/user/img3.jpg" alt="image" />
                     <h5>Christopher Taylor</h5>
                   </div>
                   <div class="quote">
