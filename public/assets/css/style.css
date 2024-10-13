@@ -14947,6 +14947,7 @@ Responsive Navbar Area CSS
   background-color: transparent;
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
 }
 .responsive-navbar
   .offcanvas-body
@@ -14964,6 +14965,7 @@ Responsive Navbar Area CSS
   .accordion-body
   .accordion-item
   .accordion-link.active {
+    cursor: pointer;
   color: #407881;
 }
 .responsive-navbar

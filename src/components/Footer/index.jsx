@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
+  const [socialLinks, setSocialLinks] = useState([]);
+
+  useEffect(() => {
+    // Fetch the testimonials data from the data.json file
+    fetch("data.json")
+      .then((response) => response.json())
+      .then((data) => setSocialLinks(data.socialLinks))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
   return (
     <>
       <footer className="footer-area">
@@ -19,7 +28,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <span>Phone:</span>
-                    <a href="tel:+91 08447482899">+91 08447482899</a>
+                    <a href="tel:+918447482899">+91 8447482899</a>
                   </li>
                 </ul>
               </div>
@@ -65,26 +74,17 @@ const Footer = () => {
                   <div className="single-footer-widget ps-5">
                     <h3>Follow Us</h3>
                     <ul className="custom-links">
-                      <li>
-                        <a href="#" target="_blank">
-                          Facebook
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">
-                          Twitter
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">
-                          Instagram
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">
-                          Linkedin
-                        </a>
-                      </li>
+                      {socialLinks.map((social, index) => (
+                        <li key={index}>
+                          <a
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {social.platform}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>

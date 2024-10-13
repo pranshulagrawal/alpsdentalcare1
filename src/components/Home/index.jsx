@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { faFeather } from "@fortawesome/free-solid-svg-icons";
+import { faFeather, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faSuitcaseMedical } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -97,9 +97,6 @@ const Home = () => {
           pagination={{
             clickable: true,
           }}
-          renderBullet={(index, className) => (
-            <span className="dental-treatment-review-pagination"></span>
-          )}
           autoplay={{
             delay: 2000, // Delay between slides in milliseconds (3 seconds here)
             disableOnInteraction: false, // Keep autoplay running after interaction
@@ -1320,10 +1317,10 @@ const Home = () => {
                       >
                         Do you accept walk-ins?
                         <div className="plus">
-                          <i data-feather="plus"></i>
+                          <FontAwesomeIcon icon={faPlus} />
                         </div>
                         <div className="minus">
-                          <i data-feather="minus"></i>
+                          <FontAwesomeIcon icon={faMinus} />
                         </div>
                       </button>
                       <div
@@ -1353,10 +1350,10 @@ const Home = () => {
                         How can I schedule an appointment for emergency
                         services?
                         <div className="plus">
-                          <i data-feather="plus"></i>
+                          <FontAwesomeIcon icon={faPlus} />
                         </div>
                         <div className="minus">
-                          <i data-feather="minus"></i>
+                          <FontAwesomeIcon icon={faMinus} />
                         </div>
                       </button>
                       <div
@@ -1385,10 +1382,10 @@ const Home = () => {
                       >
                         Do you accept dental insurance?
                         <div className="plus">
-                          <i data-feather="plus"></i>
+                          <FontAwesomeIcon icon={faPlus} />
                         </div>
                         <div className="minus">
-                          <i data-feather="minus"></i>
+                          <FontAwesomeIcon icon={faMinus} />
                         </div>
                       </button>
                       <div
@@ -1417,10 +1414,10 @@ const Home = () => {
                       >
                         Do you offer emergency dental services?
                         <div className="plus">
-                          <i data-feather="plus"></i>
+                          <FontAwesomeIcon icon={faPlus} />
                         </div>
                         <div className="minus">
-                          <i data-feather="minus"></i>
+                          <FontAwesomeIcon icon={faMinus} />
                         </div>
                       </button>
                       <div
@@ -1450,10 +1447,10 @@ const Home = () => {
                         How can I finance my dental treatment if I don't have
                         insurance?
                         <div className="plus">
-                          <i data-feather="plus"></i>
+                          <FontAwesomeIcon icon={faPlus} />
                         </div>
                         <div className="minus">
-                          <i data-feather="minus"></i>
+                          <FontAwesomeIcon icon={faMinus} />
                         </div>
                       </button>
                       <div
@@ -1482,10 +1479,10 @@ const Home = () => {
                       >
                         How can I improve my oral hygiene routine?
                         <div className="plus">
-                          <i data-feather="plus"></i>
+                          <FontAwesomeIcon icon={faPlus} />
                         </div>
                         <div className="minus">
-                          <i data-feather="minus"></i>
+                          <FontAwesomeIcon icon={faMinus} />
                         </div>
                       </button>
                       <div

@@ -1,0 +1,31 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Allison Hayes",
+      "image": "assets/images/user/img1.png",
+      "quote": "“I recently had the pleasure of visiting Doral for a dental check-up, and I couldn't be more impressed. From the moment I walked in, the friendly and welcoming staff set the tone for a positive experience.”",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Samantha Hernandez",
+      "image": "assets/images/user/img2.png",
+      "quote": "“I must recommend Doral enough! From the moment I walked in, I felt welcomed and cared for. The staff was incredibly friendly and professional, and my dentist was thorough and attentive.”",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Christopher Taylor",
+      "image": "assets/images/user/img3.png",
+      "quote": "“Five stars for Doral Service! I recently had a dental emergency and was able to get an appointment right away. They took the time to listen to my concerns and address them with care.”",
+      "rating": 5
+    }
+  ],
+  "socialLinks": [
+    { "platform": "Facebook", "url": "https://facebook.com/yourprofile" },
+    { "platform": "Twitter", "url": "https://twitter.com/yourprofile" },
+    { "platform": "Instagram", "url": "https://instagram.com/yourprofile" },
+    { "platform": "Linkedin", "url": "https://linkedin.com/in/yourprofile" }
+  ]
+}

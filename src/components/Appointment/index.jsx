@@ -1,0 +1,213 @@
+import React from "react";
+
+const Appointment = () => {
+  return (
+    <>
+      <div class="page-banner-area">
+        <div class="container">
+          <div class="page-banner-content" data-cues="slideInUp">
+            <h2>Appointment</h2>
+            <ul class="list">
+              <li>
+                <a href="">HOME</a>
+              </li>
+              <li>APPOINTMENT</li>
+              <li>NEW PATIENT</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* <!-- End Page Banner Area -->
+
+    <!-- Start Appointment Wrap Area --> */}
+      <div class="appointment-wrap-area ptb-150">
+        <div class="container">
+          <form netlify>
+            <div class="appointment-wrap-inner" data-cues="slideInUp">
+              <h3>Your Contact Information:</h3>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Patient Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="___-___-____"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Nationality</label>
+                    <select class="form-select form-control">
+                      <option selected>Nationality</option>
+                      <option value="1">British</option>
+                      <option value="2">Brazilian</option>
+                      <option value="3">Canadian</option>
+                      <option value="4">Germany</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Date Of Birth</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="MM/DD/YYYY"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Country Of Residence</label>
+                    <select class="form-select form-control">
+                      <option selected>Country</option>
+                      <option value="1">Australia</option>
+                      <option value="2">England</option>
+                      <option value="3">France</option>
+                      <option value="4">Germany</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="appointment-wrap-inner" data-cues="slideInUp">
+              <h3>Appointment Information:</h3>
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Dental Service</label>
+                    <select class="form-select form-control">
+                      <option selected>Choose services</option>
+                      <option value="1">General Dentistry</option>
+                      <option value="2">Oral Surgery</option>
+                      <option value="3">Teeth Whitening</option>
+                      <option value="4">Cosmetic Dentistry</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Preferred Doctor</label>
+                    <select class="form-select form-control">
+                      <option selected>Dr. Owen Carter, BDS</option>
+                      <option value="1">Dr. Lauren Mitchell, DMD</option>
+                      <option value="2">Dr. Ethan Reynolds, DDS</option>
+                      <option value="3">Dr. Garrett Hughes, DDS</option>
+                      <option value="4">Dr. Bradley Foster, DDS</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>At The Following Hospital</label>
+                    <select class="form-select form-control">
+                      <option selected>Hospital name</option>
+                      <option value="1">Bright Smile Dental Care</option>
+                      <option value="2">Harmony Dental Studio</option>
+                      <option value="3">Evergreen Dental Oasis</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Date Of Appointment</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="MM/DD/YYYY"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label>Time</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter your time"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                  <div class="form-group">
+                    <label>Notes:</label>
+                    <textarea
+                      class="form-control"
+                      placeholder="Notes"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                  <div class="form-group">
+                    <button type="submit" class="default-btn">
+                      Book Appointment
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      {/* <!-- End Appointment Wrap Area -->
+
+    <!-- Start CTA Area --> */}
+      <div class="cta-area">
+        <div class="container">
+          <div class="cta-inner-area">
+            <div
+              class="row justify-content-center align-items-center"
+              data-cues="slideInUp"
+            >
+              <div class="col-lg-8 col-md-12">
+                <div class="cta-content">
+                  <h3>Medical Emergency! Please Call 0-0-1.</h3>
+                  <span>
+                    Schedule your visit or if you don't find a time that works
+                    for you? Give us a call
+                  </span>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12">
+                <div class="cta-info">
+                  <div class="icon">
+                    <i data-feather="phone"></i>
+                  </div>
+                  <span>
+                    Call: <a href="tel:0053194215">(005) 319-4215</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Appointment;
