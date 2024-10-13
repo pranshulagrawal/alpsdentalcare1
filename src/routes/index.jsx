@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../components/Home";
 import Services from "../components/Services";
 import AboutUs from "../components/AboutUs";
@@ -9,36 +9,36 @@ import Blog from "../components/Blog/blogsection";
 import BlogDetails from "../components/Blog/blog-detail";
 import Nabar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Preloader from "../components/Preloader"; // Your preloader component
+import Preloader from "../components/Preloader";
 
 const AppRoutes = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Initially true for the first load
+  const [initialLoad, setInitialLoad] = useState(true); // Track initial load
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!window.location.hash) {
-      window.location.replace(`${window.location.origin}/#/`);
+    // Only set loading to true on route change after initial load
+    if (!initialLoad) {
+      setLoading(true);
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 1000); // Show preloader for 1 second
+
+      return () => clearTimeout(timer); // Cleanup timer
+    } else {
+      setLoading(false); // Set to false immediately for the first load
+      setInitialLoad(false); // Mark the initial load as done
     }
-    // Trigger loading state on route change
-    setLoading(true);
-
-    // Set timeout to disable preloader after 1 second
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000); // 1 second
-
-    return () => clearTimeout(timer); // Cleanup timer on unmount
-  }, [location, navigate]);
+  }, [location, initialLoad]); // Trigger on location change
 
   return (
     <>
       <Nabar />
-      {loading ? (
-        <Preloader /> // Show preloader while loading
+      {loading ? ( // Show preloader if loading is true
+        <Preloader />
       ) : (
         <Routes>
-          <Route path="/" element={<Home />} default />
+          <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/services" element={<Services />} />
