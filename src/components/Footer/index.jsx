@@ -6,9 +6,16 @@ const Footer = () => {
 
   useEffect(() => {
     // Fetch the testimonials data from the data.json file
-    fetch("data.json")
-      .then((response) => response.json())
-      .then((data) => setSocialLinks(data.socialLinks))
+    fetch("/data.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // Make sure to return the parsed JSON
+      })
+      .then((data) => {
+        setSocialLinks(data.socialLinks); // Assuming you want to set the socialLinks from the fetched data
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
   return (

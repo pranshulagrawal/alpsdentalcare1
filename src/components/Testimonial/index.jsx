@@ -9,7 +9,9 @@ const Testimonial = () => {
     // Fetch the testimonials data from the data.json file
     fetch("data.json")
       .then((response) => response.json())
-      .then((data) => setTestimonials(data.testimonials))
+      .then((data) => {
+        setTestimonials(data.testimonials);
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
@@ -46,15 +48,14 @@ const Testimonial = () => {
         {/* Swiper Slider Section */}
         <Swiper
           modules={[Autoplay, Pagination]}
-          spaceBetween={30}
-          slidesPerView={2}
+          effect="fade"
           loop={true}
-          loopedSlides={1}
-          autoplay={{
-            delay: 1500,
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
+          grabCursor={true}
+          slidesPerView={2}
+          spaceBetween={25}
+          speed={1200}
+          autoplay={{ delay: 1000, disableOnInteraction: false }}
+          pagination={{ el: ".dental-clinic-pagination", clickable: true }}
           className="review-wrap-slider"
         >
           {testimonials.map((testimonial) => (

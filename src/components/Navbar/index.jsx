@@ -187,6 +187,16 @@ const Nabar = () => {
             <div className="accordion-item">
               <a
                 className={`accordion-button without-icon ${
+                  activeLink === "/blog" ? "active" : ""
+                }`}
+                onClick={() => handleLinkClick("/blog")}
+              >
+                BLOG
+              </a>
+            </div>
+            <div className="accordion-item">
+              <a
+                className={`accordion-button without-icon ${
                   activeLink === "/contact-us" ? "active" : ""
                 }`}
                 onClick={() => handleLinkClick("/contact-us")}

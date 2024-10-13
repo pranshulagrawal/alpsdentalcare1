@@ -6,21 +6,23 @@ const BlogDetail = () => {
   const [blog, setBlog] = useState(null); // State to hold the blog data
   const [loading, setLoading] = useState(true); // Loading state
 
-  useEffect(() => {
-    // Fetch the blog data from data.json
-    const fetchBlogData = async () => {
-      try {
-        const response = await fetch("data.json"); // Update with your actual path to data.json
-        const data = await response.json();
-        const blogPost = data.blogs.find((post) => post.id === id); // Find the blog post with the matching ID
-        setBlog(blogPost);
-      } catch (error) {
-        console.error("Error fetching blog data:", error);
-      } finally {
-        setLoading(false);
+  const fetchBlogData = async () => {
+    try {
+      const response = await fetch("/data.json"); // Path to your data.json
+      if (!response.ok) {
+        throw new Error("Failed to fetch blog data");
       }
-    };
+      const data = await response.json();
+      const blogPost = data.blogs.find((blog) => blog.id == parseInt(id, 10));
+      setBlog(blogPost); // Set the blog post data
+    } catch (error) {
+      console.error("Error fetching blog data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchBlogData();
   }, [id]);
 
@@ -103,81 +105,6 @@ const BlogDetail = () => {
               </div>
             </div>
             {/* Comments and Reply section */}
-            <div className="article-comment">
-              <h3>Comments</h3>
-              {blog.commentsList.map(
-                (
-                  comment,
-                  index // Assuming your blog data has commentsList property
-                ) => (
-                  <div className="comment-list" key={index}>
-                    <img src={comment.userImage} alt="image" />{" "}
-                    {/* Assuming your comment has a userImage property */}
-                    <h4>{comment.userName}</h4>{" "}
-                    {/* Assuming your comment has a userName property */}
-                    <span>{comment.date}</span>{" "}
-                    {/* Assuming your comment has a date property */}
-                    <ul className="rating">
-                      {Array.from({ length: comment.rating }, (_, i) => (
-                        <li key={i}>
-                          <i className="flaticon-star"></i>
-                        </li>
-                      ))}
-                    </ul>
-                    <p>{comment.text}</p>{" "}
-                    {/* Assuming your comment has a text property */}
-                    <div className="reply-btn">Reply</div>
-                  </div>
-                )
-              )}
-            </div>
-            <div className="article-reply">
-              <h3>Leave A Comment</h3>
-              <form netlify>
-                <div className="form-group">
-                  <label>Your Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Email Address</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Enter email address"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Your Phone</label>
-                  <input
-                    type="phone"
-                    className="form-control"
-                    placeholder="Enter your phone"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Website</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter your website"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Your Comment</label>
-                  <textarea
-                    className="form-control"
-                    placeholder="Your comment here"
-                  ></textarea>
-                </div>
-                <button type="submit" className="default-btn">
-                  Post A Comment
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </div>
