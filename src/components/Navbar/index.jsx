@@ -1,53 +1,78 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Nabar = () => {
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user has scrolled past 100px, for example
+      if (window.scrollY > 100) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+
+    // Add event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
-      <nav class="navbar navbar-expand-xl navbar-style-three-area" id="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index-3.html">
+      <nav
+        className={`navbar navbar-expand-xl navbar-style-three-area ${
+          sticky ? "sticky-navbar" : ""
+        }`}
+        id="navbar"
+      >
+        <div className="container-fluid">
+          <a className="navbar-brand" href="index-3.html">
             <img src="assets/images/logo.png" alt="logo" />
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             data-bs-toggle="offcanvas"
             data-bs-target="#navbarOffcanvas"
           >
-            <span class="burger-menu">
-              <span class="top-bar"></span>
-              <span class="middle-bar"></span>
-              <span class="bottom-bar"></span>
+            <span className="burger-menu">
+              <span className="top-bar"></span>
+              <span className="middle-bar"></span>
+              <span className="bottom-bar"></span>
             </span>
           </button>
-          <div class="collapse navbar-collapse">
-            <ul class="navbar-nav m-auto">
-              <li class="nav-item">
-                <a href="index.html" class="nav-link active">
+          <div className="collapse navbar-collapse">
+            <ul className="navbar-nav m-auto">
+              <li className="nav-item">
+                <a href="index.html" className="nav-link active">
                   {" "}
                   HOME{" "}
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="services-style-two.html" class="nav-link">
+              <li className="nav-item">
+                <a href="services-style-two.html" className="nav-link">
                   {" "}
                   SERVICES{" "}
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="about-us.html" class="nav-link">
+              <li className="nav-item">
+                <a href="about-us.html" className="nav-link">
                   {" "}
                   ABOUT US{" "}
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="contact-us.html" class="nav-link">
+              <li className="nav-item">
+                <a href="contact-us.html" className="nav-link">
                   CONTACT US
                 </a>
               </li>
             </ul>
-            <div class="others-option d-flex align-items-center">
-              <div class="option-item">
-                <a href="appointment.html" class="default-btn">
+            <div className="others-option d-flex align-items-center">
+              <div className="option-item">
+                <a href="appointment.html" className="default-btn">
                   Book Appointment
                 </a>
               </div>
@@ -59,78 +84,81 @@ const Nabar = () => {
 
     <!-- Start Responsive Navbar Area --> */}
       <div
-        class="responsive-navbar offcanvas offcanvas-end"
+        className="responsive-navbar offcanvas offcanvas-end"
         tabindex="-1"
         id="navbarOffcanvas"
       >
-        <div class="offcanvas-header">
-          <a href="index-3.html" class="logo d-inline-block">
+        <div className="offcanvas-header">
+          <a href="index-3.html" className="logo d-inline-block">
             <img src="assets/images/logo2.png" alt="logo" />
           </a>
           <button
             type="button"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
-            class="close-btn"
+            className="close-btn"
           >
             <i data-feather="x"></i>
           </button>
         </div>
-        <div class="offcanvas-body">
-          <div class="accordion" id="navbarAccordion">
-            <div class="accordion-item">
+        <div className="offcanvas-body">
+          <div className="accordion" id="navbarAccordion">
+            <div className="accordion-item">
               <button
-                class="accordion-button without-icon active"
+                className="accordion-button without-icon active"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
                 aria-expanded="false"
                 aria-controls="collapseOne"
               >
-                <a class="accordion-link" href="index.html">
+                <a className="accordion-link" href="index.html">
                   {" "}
                   HOME{" "}
                 </a>
               </button>
             </div>
-            <div class="accordion-item">
+            <div className="accordion-item">
               <button
-                class="accordion-button without-icon"
+                className="accordion-button without-icon"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseTwo"
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
-                <a href="services-style-two.html" class="accordion-link">
+                <a href="services-style-two.html" className="accordion-link">
                   SERVICES
                 </a>
               </button>
             </div>
-            <div class="accordion-item">
+            <div className="accordion-item">
               <button
-                class="accordion-button without-icon"
+                className="accordion-button without-icon"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseThree"
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                <a href="about-us.html" class="accordion-link">
+                <a href="about-us.html" className="accordion-link">
                   {" "}
                   ABOUT US{" "}
                 </a>
               </button>
             </div>
-            <div class="accordion-item">
-              <a class="accordion-button without-icon" href="contact-us.html">
+            <div className="accordion-item">
+              <a
+                className="accordion-button without-icon"
+                href="contact-us.html"
+              >
                 CONTACT US
               </a>
             </div>
           </div>
-          <div class="others-option d-flex align-items-center justify-content-center">
-            <div class="option-item">
-              <a href="appointment.html" class="default-btn">
+          <div className="others-option d-flex align-items-center justify-content-center">
+            <div className="option-item">
+              <a href="appointment.html" className="default-btn">
                 Book Appointment
               </a>
             </div>
