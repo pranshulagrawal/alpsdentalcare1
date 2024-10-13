@@ -8,7 +8,7 @@ import Appointment from "../components/Appointment";
 import Blog from "../components/Blog/blogsection";
 import BlogDetails from "../components/Blog/blog-detail";
 import Nabar from "../components/Navbar";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
 const AppRoutes = () => {
   return (
