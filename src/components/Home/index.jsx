@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
@@ -7,7 +7,24 @@ import { faSuitcaseMedical } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import Testimonial from "../Testimonial";
+import Subscribe from "../Subscribe";
+import { Link } from "react-router-dom";
+
 const Home = () => {
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch("/data.json"); // Update the path accordingly
+        const data = await response.json();
+        setBlogs(data.blogs.slice(-3)); // Get the last 3 blogs
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
   return (
     <>
       {/* <!-- Start Dental Treatment Banner Area --> */}
@@ -31,63 +48,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* <div className="swiper dental-treatment-review-slider">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide">
-              <div className="dental-treatment-review-card">
-                <div className="user">
-                  <img src="assets/images/user/img1.png" alt="image" />
-                  <h5>Allison Hayes</h5>
-                </div>
-                <div className="content">
-                  <p>
-                    “I've been a patient at Doral for several years now, & the
-                    exceptional care.”
-                  </p>
-                  <div className="quote">
-                    <i className="flaticon-quote"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="swiper-slide">
-              <div className="dental-treatment-review-card">
-                <div className="user">
-                  <img src="assets/images/user/img2.png" alt="image" />
-                  <h5>Sarah Johnson</h5>
-                </div>
-                <div className="content wrap2">
-                  <p>
-                    “ From the moment I walked in, I was greeted by a warm and
-                    welcoming staff.”
-                  </p>
-                  <div className="quote">
-                    <i className="flaticon-quote"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="swiper-slide">
-              <div className="dental-treatment-review-card">
-                <div className="user">
-                  <img src="assets/images/user/img3.png" alt="image" />
-                  <h5>Jessica Taylor</h5>
-                </div>
-                <div className="content wrap3">
-                  <p>
-                    “The facilities & equipment at Doral were impressive,
-                    further enhancing doral.”
-                  </p>
-                  <div className="quote">
-                    <i className="flaticon-quote"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="dental-treatment-review-pagination"></div>
-        </div> */}
-
         <Swiper
           modules={[Autoplay, Pagination]} // Add autoplay module
           spaceBetween={50} // Adjust space between slides
@@ -1518,92 +1478,60 @@ const Home = () => {
             className="row justify-content-center align-items-center"
             data-cues="slideInUp"
           >
-            <div className="col-lg-6 col-md-12">
-              <div className="blog-item">
-                <a href="blog-details.html">
-                  <img src="assets/images/blog/large1.jpg" alt="image" />
-                </a>
-                <div className="content">
-                  <h3>
-                    <a href="blog-details.html">
-                      Unlocking Your Best Smile: Tips from best Dentistry.
-                    </a>
-                  </h3>
-                  <ul className="meta">
-                    <li>5 Feb, 2024</li>
-                    <li>
-                      <a href="blog-style-two.html">DENTAL</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              <div className="row justify-content-center">
-                <div className="col-lg-6 col-md-6">
+            {blogs.length > 0 && (
+              <>
+                <div className="col-lg-6 col-md-12">
                   <div className="blog-item">
-                    <a href="blog-details.html">
-                      <img src="assets/images/blog/large2.jpg" alt="image" />
-                    </a>
-                    <div className="content little-wrap">
+                    <Link to={`/blog/${blogs[2].id}`}>
+                      <img src={blogs[2].image} alt="image" />
+                    </Link>
+                    <div className="content">
                       <h3>
-                        <a href="blog-details.html">
-                          From Check-ups To Smile, Exploring Our Services
-                        </a>
+                        <Link to={`/blog/${blogs[2].id}`}>
+                          {blogs[2].title}
+                        </Link>
                       </h3>
-                      <a href="blog-style-two.html" className="tag-btn">
-                        DENTAL
-                      </a>
+                      <ul className="meta">
+                        <li>{blogs[2].date}</li>
+                        <li>
+                          <Link to={`/blog/${blogs[2].id}`}>
+                            {blogs[2].category}
+                          </Link>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6 col-md-6">
-                  <div className="blog-item">
-                    <a href="blog-details.html">
-                      <img src="assets/images/blog/large3.jpg" alt="image" />
-                    </a>
-                    <div className="content little-wrap">
-                      <h3>
-                        <a href="blog-details.html">
-                          The Road To A Brighter Smile Your dental Experience
-                        </a>
-                      </h3>
-                      <a href="blog-style-two.html" className="tag-btn">
-                        DENTAL
-                      </a>
-                    </div>
+                <div className="col-lg-3 col-md-12">
+                  <div className="row justify-content-center">
+                    {blogs.slice(0, 2).map((blog) => (
+                      <div key={blog.id} className="col-lg-12 col-md-6">
+                        <div className="blog-item">
+                          <Link to={`/blog/${blog.id}`}>
+                            <img src={blog.image} alt="image" />
+                          </Link>
+                          <div className="content little-wrap">
+                            <h3>
+                              <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
+                            </h3>
+                            <Link
+                              to={`/blog/${blogs[2].id}`}
+                              className="tag-btn"
+                            >
+                              {blog.category}
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </div>
       </div>
-      {/* <!-- End Blog Area -->
-
-    <!-- Start Subscribe Area --> */}
-      <div className="subscribe-area">
-        <div className="container">
-          <div className="subscribe-inner-area">
-            <div
-              className="row justify-content-center align-items-end"
-              data-cues="slideInUp"
-            >
-              <div className="col-lg-7 col-md-12">
-                <div className="subscribe-content">
-                  <span className="sub">Healthy News And Solutions</span>
-                  <h3>Book your appointment</h3>
-                </div>
-              </div>
-              <div className="col-lg-5 col-md-12">
-                <a href="appointment.html" className="default-btn">
-                  Book Appointment
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Subscribe />
     </>
   );
 };

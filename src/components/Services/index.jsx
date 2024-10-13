@@ -1,6 +1,7 @@
 import React from "react";
 import Testimonial from "../Testimonial";
 import { useNavigate } from "react-router-dom";
+import Subscribe from "../Subscribe";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -346,33 +347,7 @@ const Services = () => {
       {/* <!-- End Testimonials Area -->
 
         <!-- Start Subscribe Area --> */}
-      <div class="subscribe-area">
-        <div class="container">
-          <div class="subscribe-inner-area">
-            <div
-              class="row justify-content-center align-items-end"
-              data-cues="slideInUp"
-            >
-              <div class="col-lg-7 col-md-12">
-                <div class="subscribe-content">
-                  <span class="sub">Healthy News And Solutions</span>
-                  <h3>Book Your Appointment Now</h3>
-                </div>
-              </div>
-              <div class="col-lg-5 col-md-12">
-                <div className="option-item">
-                  <a
-                    onClick={() => navigate("/appointment")}
-                    className="default-btn"
-                  >
-                    Book Appointment
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Subscribe />
     </>
   );
 };

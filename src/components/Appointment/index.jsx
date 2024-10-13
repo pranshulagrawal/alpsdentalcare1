@@ -1,3 +1,5 @@
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Appointment = () => {
@@ -195,7 +197,7 @@ const Appointment = () => {
               <div class="col-lg-4 col-md-12">
                 <div class="cta-info">
                   <div class="icon">
-                    <i data-feather="phone"></i>
+                    <FontAwesomeIcon icon={faPhone} />
                   </div>
                   <span>
                     Call: <a href="tel:0053194215">(005) 319-4215</a>

@@ -14,23 +14,17 @@ import Error from "../components/Error";
 
 const AppRoutes = () => {
   const [loading, setLoading] = useState(true); // Initially true for the first load
-  const [initialLoad, setInitialLoad] = useState(true); // Track initial load
   const location = useLocation();
 
   useEffect(() => {
     // Only set loading to true on route change after initial load
-    if (!initialLoad) {
-      setLoading(true);
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 1000); // Show preloader for 1 second
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Show preloader for 1 second
 
-      return () => clearTimeout(timer); // Cleanup timer
-    } else {
-      setLoading(false); // Set to false immediately for the first load
-      setInitialLoad(false); // Mark the initial load as done
-    }
-  }, [location, initialLoad]); // Trigger on location change
+    return () => clearTimeout(timer); // Cleanup timer // Mark the initial load as done
+  }, [location]); // Trigger on location change
 
   return (
     <>
