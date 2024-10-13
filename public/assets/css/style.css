@@ -13636,7 +13636,7 @@ Search Popup CSS
   opacity: 0;
   display: none;
   background-color: #002345;
-  cursor: url(../images/cross-btn.jpg), auto;
+  cursor: url(../images/cross-btn.png), auto;
 }
 .search-popup .search-popup-content {
   position: fixed;
@@ -16095,7 +16095,7 @@ Real Results Area CSS
   right: 0;
   bottom: 0;
   border-radius: 10px;
-  background-image: url(../images/real-results/wrap.jpg);
+  background-image: url(../images/real-results/wrap.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16711,7 +16711,7 @@ Dental Treatment Banner Area CSS
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(../images/dental-treatment/line.jpg);
+  background-image: url(../images/dental-treatment/line.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17163,7 +17163,7 @@ Page Banner Area CSS
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-image: url(../images/page-banner/line.jpg);
+  background-image: url(../images/page-banner/line.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

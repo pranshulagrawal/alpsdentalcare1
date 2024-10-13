@@ -1,5 +1,4 @@
 import React from "react";
-import Testimonial from "../Testimonial";
 
 const Home = () => {
   return (
@@ -27,7 +26,7 @@ const Home = () => {
             <div class="swiper-slide">
               <div class="dental-treatment-review-card">
                 <div class="user">
-                  <img src="/assets/images/user/img1.jpg" alt="main-image" />
+                  <img src="assets/images/user/img1.png" alt="image" />
                   <h5>Allison Hayes</h5>
                 </div>
                 <div class="content">
@@ -44,7 +43,7 @@ const Home = () => {
             <div class="swiper-slide">
               <div class="dental-treatment-review-card">
                 <div class="user">
-                  <img src="/assets/images/user/img2.jpg" alt="hero-image" />
+                  <img src="assets/images/user/img2.png" alt="image" />
                   <h5>Sarah Johnson</h5>
                 </div>
                 <div class="content wrap2">
@@ -61,7 +60,7 @@ const Home = () => {
             <div class="swiper-slide">
               <div class="dental-treatment-review-card">
                 <div class="user">
-                  <img src="/assets/images/user/img3.jpg" alt="hero-image" />
+                  <img src="assets/images/user/img3.png" alt="image" />
                   <h5>Jessica Taylor</h5>
                 </div>
                 <div class="content wrap3">
@@ -134,7 +133,7 @@ const Home = () => {
           <div class="row justify-content-center" data-cues="slideInUp">
             <div class="col-xxl-4 col-md-6">
               <div class="category-card">
-                <img src="/assets/images/category/category1.jpg" alt="image" />
+                <img src="assets/images/category/category1.jpg" alt="image" />
                 <ul class="list">
                   <li>
                     Hours <strong>1.3 - 2</strong>
@@ -155,7 +154,7 @@ const Home = () => {
             </div>
             <div class="col-xxl-4 col-md-6">
               <div class="category-card">
-                <img src="/assets/images/category/category2.jpg" alt="image" />
+                <img src="assets/images/category/category2.jpg" alt="image" />
                 <ul class="list">
                   <li>
                     Hours <strong>1 - 2</strong>
@@ -176,7 +175,7 @@ const Home = () => {
             </div>
             <div class="col-xxl-4 col-md-6">
               <div class="category-card">
-                <img src="/assets/images/category/category3.jpg" alt="image" />
+                <img src="assets/images/category/category3.jpg" alt="image" />
                 <ul class="list">
                   <li>
                     Hours <strong>1 - 1.4</strong>
@@ -237,7 +236,7 @@ const Home = () => {
                 </h2>
                 <div class="inner">
                   <div class="icon">
-                    <img src="/assets/images/overview/icon1.jpg" alt="image" />
+                    <img src="assets/images/overview/icon1.png" alt="image" />
                   </div>
                   <div class="title">
                     <h3>Safety First</h3>
@@ -249,7 +248,7 @@ const Home = () => {
                 </div>
                 <div class="inner">
                   <div class="icon">
-                    <img src="/assets/images/overview/icon2.jpg" alt="image" />
+                    <img src="assets/images/overview/icon2.png" alt="image" />
                   </div>
                   <div class="title">
                     <h3>Insurance Accepted</h3>
@@ -261,7 +260,7 @@ const Home = () => {
                 </div>
                 <div class="inner">
                   <div class="icon">
-                    <img src="/assets/images/overview/icon3.jpg" alt="image" />
+                    <img src="assets/images/overview/icon3.png" alt="image" />
                   </div>
                   <div class="title">
                     <h3>Full Service Dentistry</h3>
@@ -311,11 +310,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Dental Hygiene
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Dental Fillings
                       </li>
                     </ul>
@@ -323,11 +322,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Dental Crowns
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Dental Bridge
                       </li>
                     </ul>
@@ -356,11 +355,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Teeth Whitening
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Cosmetic Dentures
                       </li>
                     </ul>
@@ -368,7 +367,7 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         White Fillings
                       </li>
                     </ul>
@@ -397,11 +396,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Fixed Braces
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Invisible Braces
                       </li>
                     </ul>
@@ -409,11 +408,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Lingual Braces
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Dental Bridge
                       </li>
                     </ul>
@@ -442,11 +441,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Dental Examination
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Fabrication of Aligners
                       </li>
                     </ul>
@@ -454,7 +453,7 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Wearing Aligners
                       </li>
                     </ul>
@@ -483,11 +482,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Initial Consultation
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Final Adjustments
                       </li>
                     </ul>
@@ -495,11 +494,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Fabrication of Veneers
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Temporary Veneers
                       </li>
                     </ul>
@@ -528,11 +527,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Dental Implant
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Apicoectomy
                       </li>
                     </ul>
@@ -540,11 +539,11 @@ const Home = () => {
                   <div class="col-lg-6 col-sm-12">
                     <ul class="list">
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Orthognathic Surgery
                       </li>
                       <li>
-                        <img src="/assets/images/services/dot.jpg" alt="dot" />
+                        <img src="assets/images/services/dot.png" alt="dot" />
                         Pre-Prosthetic Surgery
                       </li>
                     </ul>
@@ -670,7 +669,7 @@ const Home = () => {
               <div class="swiper-slide">
                 <div class="real-results-wrap-card">
                   <img
-                    src="/assets/images/real-results/large1.jpg"
+                    src="assets/images/real-results/large1.jpg"
                     alt="image"
                   />
                   <h3>Tooth Extraction</h3>
@@ -682,7 +681,7 @@ const Home = () => {
               <div class="swiper-slide">
                 <div class="real-results-wrap-card">
                   <img
-                    src="/assets/images/real-results/large2.jpg"
+                    src="assets/images/real-results/large2.jpg"
                     alt="image"
                   />
                   <h3>Teeth Whitening</h3>
@@ -694,7 +693,7 @@ const Home = () => {
               <div class="swiper-slide">
                 <div class="real-results-wrap-card">
                   <img
-                    src="/assets/images/real-results/large3.jpg"
+                    src="assets/images/real-results/large3.jpg"
                     alt="image"
                   />
                   <h3>Dental Implants</h3>
@@ -706,7 +705,7 @@ const Home = () => {
               <div class="swiper-slide">
                 <div class="real-results-wrap-card">
                   <img
-                    src="/assets/images/real-results/large1.jpg"
+                    src="assets/images/real-results/large1.jpg"
                     alt="image"
                   />
                   <h3>Tooth Extraction</h3>
@@ -718,7 +717,7 @@ const Home = () => {
               <div class="swiper-slide">
                 <div class="real-results-wrap-card">
                   <img
-                    src="/assets/images/real-results/large2.jpg"
+                    src="assets/images/real-results/large2.jpg"
                     alt="image"
                   />
                   <h3>Teeth Whitening</h3>
@@ -730,7 +729,7 @@ const Home = () => {
               <div class="swiper-slide">
                 <div class="real-results-wrap-card">
                   <img
-                    src="/assets/images/real-results/large3.jpg"
+                    src="assets/images/real-results/large3.jpg"
                     alt="image"
                   />
                   <h3>Dental Implants</h3>
@@ -746,7 +745,257 @@ const Home = () => {
       {/* <!-- End Real Results Wrap Area -->
 
     <!-- Start Review Wrap Area --> */}
-      <Testimonial />
+      <div class="review-wrap-area bg-with-primary-color pt-150">
+        <div class="container-fluid">
+          <div class="review-wrap-content" data-cues="slideInUp">
+            <h2>Compassionate Patient-Focused Oral And Maxillofacial Care</h2>
+            <p>
+              We take great pride in providing exceptional dental care and
+              ensuring a positive experience for each of our valued patients.
+            </p>
+            <ul class="list">
+              <li>
+                <i data-feather="check"></i>
+                Complimentary initial consultation
+              </li>
+              <li>
+                <i data-feather="check"></i>
+                Convenient hours to suit any life style
+              </li>
+              <li>
+                <i data-feather="check"></i>
+                Modern treatment and equipment's
+              </li>
+            </ul>
+            <div class="review-btn">
+              <a href="appointment.html" class="default-btn">
+                Book Appointment
+              </a>
+            </div>
+          </div>
+          <div class="swiper review-wrap-slider">
+            <div class="swiper-wrapper" data-cues="slideInUp">
+              <div class="swiper-slide">
+                <div class="review-wrap-card">
+                  <ul class="rating">
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                  </ul>
+                  <p>
+                    “I recently had the pleasure of visiting Doral for a dental
+                    check-up, and I couldn't be more impressed. From the moment
+                    I walked in, the friendly and welcoming staff set the tone
+                    for a positive experience.”
+                  </p>
+                  <div class="info">
+                    <div class="title">
+                      <img src="assets/images/user/img1.png" alt="image" />
+                      <h5>Allison Hayes</h5>
+                    </div>
+                    <div class="quote">
+                      <i class="flaticon-quote"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-wrap-card">
+                  <ul class="rating">
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                  </ul>
+                  <p>
+                    “I must recommend Doral enough! From the moment I walked in,
+                    I felt welcomed and cared for. The staff was incredibly
+                    friendly and professional, and my dentist was thorough and
+                    attentive.”
+                  </p>
+                  <div class="info">
+                    <div class="title">
+                      <img src="assets/images/user/img2.png" alt="image" />
+                      <h5>Samantha Hernandez</h5>
+                    </div>
+                    <div class="quote">
+                      <i class="flaticon-quote"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-wrap-card">
+                  <ul class="rating">
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                  </ul>
+                  <p>
+                    “Five stars for Doral Service! I recently had a dental
+                    emergency and was able to get an appointment right away.
+                    They took the time to listen to my concerns and address them
+                    with care.”
+                  </p>
+                  <div class="info">
+                    <div class="title">
+                      <img src="assets/images/user/img3.png" alt="image" />
+                      <h5>Christopher Taylor</h5>
+                    </div>
+                    <div class="quote">
+                      <i class="flaticon-quote"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-wrap-card">
+                  <ul class="rating">
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                  </ul>
+                  <p>
+                    “I recently had the pleasure of visiting Doral for a dental
+                    check-up, and I couldn't be more impressed. From the moment
+                    I walked in, the friendly and welcoming staff set the tone
+                    for a positive experience.”
+                  </p>
+                  <div class="info">
+                    <div class="title">
+                      <img src="assets/images/user/img1.png" alt="image" />
+                      <h5>Allison Hayes</h5>
+                    </div>
+                    <div class="quote">
+                      <i class="flaticon-quote"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-wrap-card">
+                  <ul class="rating">
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                  </ul>
+                  <p>
+                    “I must recommend Doral enough! From the moment I walked in,
+                    I felt welcomed and cared for. The staff was incredibly
+                    friendly and professional, and my dentist was thorough and
+                    attentive.”
+                  </p>
+                  <div class="info">
+                    <div class="title">
+                      <img src="assets/images/user/img2.png" alt="image" />
+                      <h5>Samantha Hernandez</h5>
+                    </div>
+                    <div class="quote">
+                      <i class="flaticon-quote"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-wrap-card">
+                  <ul class="rating">
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                    <li>
+                      <i class="flaticon-star"></i>
+                    </li>
+                  </ul>
+                  <p>
+                    “Five stars for Doral Service! I recently had a dental
+                    emergency and was able to get an appointment right away.
+                    They took the time to listen to my concerns and address them
+                    with care.”
+                  </p>
+                  <div class="info">
+                    <div class="title">
+                      <img src="assets/images/user/img3.png" alt="image" />
+                      <h5>Christopher Taylor</h5>
+                    </div>
+                    <div class="quote">
+                      <i class="flaticon-quote"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="review-wrap-pagination"></div>
+          </div>
+        </div>
+      </div>
       {/* <!-- End Review Wrap Area -->
 
     <!-- Start Doctors Area --> */}
@@ -765,7 +1014,7 @@ const Home = () => {
                       <div class="doctor-image">
                         <a href="dentist-profile.html">
                           <img
-                            src="/assets/images/doctors/circle1.jpg"
+                            src="assets/images/doctors/circle1.png"
                             alt="image"
                           />
                         </a>
@@ -816,7 +1065,7 @@ const Home = () => {
                       <div class="doctor-image">
                         <a href="dentist-profile.html">
                           <img
-                            src="/assets/images/doctors/circle2.jpg"
+                            src="assets/images/doctors/circle2.png"
                             alt="image"
                           />
                         </a>
@@ -867,7 +1116,7 @@ const Home = () => {
                       <div class="doctor-image">
                         <a href="dentist-profile.html">
                           <img
-                            src="/assets/images/doctors/circle3.jpg"
+                            src="assets/images/doctors/circle3.png"
                             alt="image"
                           />
                         </a>
@@ -918,7 +1167,7 @@ const Home = () => {
                       <div class="doctor-image">
                         <a href="dentist-profile.html">
                           <img
-                            src="/assets/images/doctors/circle4.jpg"
+                            src="assets/images/doctors/circle4.png"
                             alt="image"
                           />
                         </a>
@@ -1188,7 +1437,7 @@ const Home = () => {
             <div class="col-lg-6 col-md-12">
               <div class="blog-item">
                 <a href="blog-details.html">
-                  <img src="/assets/images/blog/large1.jpg" alt="image" />
+                  <img src="assets/images/blog/large1.jpg" alt="image" />
                 </a>
                 <div class="content">
                   <h3>
@@ -1210,7 +1459,7 @@ const Home = () => {
                 <div class="col-lg-6 col-md-6">
                   <div class="blog-item">
                     <a href="blog-details.html">
-                      <img src="/assets/images/blog/large2.jpg" alt="image" />
+                      <img src="assets/images/blog/large2.jpg" alt="image" />
                     </a>
                     <div class="content little-wrap">
                       <h3>
@@ -1227,7 +1476,7 @@ const Home = () => {
                 <div class="col-lg-6 col-md-6">
                   <div class="blog-item">
                     <a href="blog-details.html">
-                      <img src="/assets/images/blog/large3.jpg" alt="image" />
+                      <img src="assets/images/blog/large3.jpg" alt="image" />
                     </a>
                     <div class="content little-wrap">
                       <h3>
@@ -1246,9 +1495,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <!-- End Blog Area --> */}
+      {/* <!-- End Blog Area -->
 
-      {/* <!-- Start Subscribe Area --> */}
+    <!-- Start Subscribe Area --> */}
       <div class="subscribe-area">
         <div class="container">
           <div class="subscribe-inner-area">
@@ -1271,7 +1520,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* End Subscribe Area  */}
     </>
   );
 };

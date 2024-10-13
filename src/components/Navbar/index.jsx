@@ -1,12 +1,12 @@
 import React from "react";
 
-const Navbar = () => {
+const Nabar = () => {
   return (
     <>
       <nav class="navbar navbar-expand-xl navbar-style-three-area" id="navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="index-3.html">
-            <img src="/assets/images/logo.jpg" alt="logo" />
+            <img src="assets/images/logo.png" alt="logo" />
           </a>
           <button
             class="navbar-toggler"
@@ -55,6 +55,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      {/* <!-- End Navbar Area -->
+
+    <!-- Start Responsive Navbar Area --> */}
       <div
         class="responsive-navbar offcanvas offcanvas-end"
         tabindex="-1"
@@ -62,7 +65,7 @@ const Navbar = () => {
       >
         <div class="offcanvas-header">
           <a href="index-3.html" class="logo d-inline-block">
-            <img src="/assets/images/logo2.jpg" alt="logo" />
+            <img src="assets/images/logo2.png" alt="logo" />
           </a>
           <button
             type="button"
@@ -138,4 +141,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Nabar;
