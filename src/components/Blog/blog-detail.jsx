@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Preloader from "../Preloader";
 
 const BlogDetail = () => {
   const { id } = useParams(); // Get the blog ID from the URL
@@ -27,7 +28,7 @@ const BlogDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>; // Loading state
+    return <Preloader />; // Loading state
   }
 
   if (!blog) {
