@@ -1,41 +1,61 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+
 const Footer = () => {
   const [socialLinks, setSocialLinks] = useState([]);
+  const [quickLinks, setQuickLinks] = useState([]);
+  const [legalLinks, setLegalLinks] = useState([]);
+  const [location, setLocation] = useState("");
+  const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch the testimonials data from the data.json file
+    // Fetch the data from the data.json file
     fetch("/data.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json(); // Make sure to return the parsed JSON
+        return response.json(); // Return the parsed JSON
       })
       .then((data) => {
-        setSocialLinks(data.socialLinks); // Assuming you want to set the socialLinks from the fetched data
+        setSocialLinks(data?.socialLinks || []);
+        setQuickLinks(data?.quickLinks || []);
+        setLegalLinks(data?.legalLinks || []);
+        setLocation(data?.location || "");
+        setPhone(data?.phone || "");
       })
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
+
+  // Handle navigation on link click
+  const handleNavigate = (url) => {
+    return (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      navigate(url);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  };
+
   return (
     <>
       <footer className="footer-area">
         <div className="container">
-          <div
-            className="row justify-content-center align-items-center"
-            data-cue="slideInUp"
-          >
+          <div className="row justify-content-center align-items-center">
             <div className="col-xl-5 col-md-12">
               <div className="single-footer-widget pe-5">
                 <ul className="info-list">
                   <li>
-                    <span>Location:</span> 2nd Floor, Shop no. 2032, JMS
-                    Crosswalk, Sector 93, Gurugram, Haryana 122505
+                    <span>Location:</span> {location}
                   </li>
                   <li>
                     <span>Phone:</span>
-                    <a href="tel:+918447482899">+91 8447482899</a>
+                    <a href={`tel:${phone}`}>{phone}</a>
                   </li>
                 </ul>
               </div>
@@ -44,20 +64,15 @@ const Footer = () => {
               <div className="row justify-content-center">
                 <div className="col-lg-4 col-sm-4">
                   <div className="single-footer-widget ps-5">
-                    <h3>Quick Link</h3>
+                    <h3>Quick Links</h3>
                     <ul className="custom-links">
-                      <li>
-                        <a href="about-us.html">About Us</a>
-                      </li>
-                      <li>
-                        <a href="services-style-one.html">Our Services</a>
-                      </li>
-                      <li>
-                        <a href="membership-plan.html">Pricing & Plan</a>
-                      </li>
-                      <li>
-                        <a href="contact-us.html">Contact Us</a>
-                      </li>
+                      {quickLinks?.map((link, index) => (
+                        <li key={index}>
+                          <a href="#" onClick={handleNavigate(link?.url)}>
+                            {link?.title}
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -65,15 +80,11 @@ const Footer = () => {
                   <div className="single-footer-widget ps-5">
                     <h3>Legal</h3>
                     <ul className="custom-links">
-                      <li>
-                        <a href="terms-conditions.html">Terms & Conditions</a>
-                      </li>
-                      <li>
-                        <a href="privacy-policy.html">Privacy Policy</a>
-                      </li>
-                      <li>
-                        <a href="contact-us.html">Help Center</a>
-                      </li>
+                      {legalLinks?.map((link, index) => (
+                        <li key={index}>
+                          <a href={link?.url}>{link?.title}</a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -81,14 +92,14 @@ const Footer = () => {
                   <div className="single-footer-widget ps-5">
                     <h3>Follow Us</h3>
                     <ul className="custom-links">
-                      {socialLinks.map((social, index) => (
+                      {socialLinks?.map((social, index) => (
                         <li key={index}>
                           <a
-                            href={social.url}
+                            href={social?.url}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            {social.platform}
+                            {social?.platform}
                           </a>
                         </li>
                       ))}
@@ -98,17 +109,16 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="copyright-area">
-            <p>@ ALPS Dental Care. All Rights Reserved</p>
-          </div>
+          <div className="copyright-area"></div>
         </div>
       </footer>
       <button
         type="button"
         id="back-to-top"
         className="position-fixed text-center border-0 p-0"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        <FontAwesomeIcon icon={faChevronUp} fade />
+        <FontAwesomeIcon icon={faChevronUp} />
       </button>
     </>
   );

@@ -1,10 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { faCancel, faX } from "@fortawesome/free-solid-svg-icons";
+import { faCross } from "@fortawesome/free-solid-svg-icons/faCross";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Nabar = () => {
   const [sticky, setSticky] = useState(false);
   const [activeLink, setActiveLink] = useState("/"); // State to track the active link
+  const [quickLinks, setQuickLinks] = useState([]); // State to hold quick links
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,6 +24,21 @@ const Nabar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  // Fetch quickLinks data from data.json
+  useEffect(() => {
+    fetch("/data.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // Return the parsed JSON
+      })
+      .then((data) => {
+        setQuickLinks(data.quickLinks); // Set quickLinks from the fetched data
+      })
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const handleLinkClick = (link) => {
@@ -52,54 +71,18 @@ const Nabar = () => {
           </button>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav m-auto">
-              <li className="nav-item">
-                <a
-                  onClick={() => handleLinkClick("/")}
-                  className={`nav-link ${activeLink === "/" ? "active" : ""}`}
-                >
-                  HOME
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  onClick={() => handleLinkClick("/services")}
-                  className={`nav-link ${
-                    activeLink === "/services" ? "active" : ""
-                  }`}
-                >
-                  SERVICES
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  onClick={() => handleLinkClick("/about-us")}
-                  className={`nav-link ${
-                    activeLink === "/about-us" ? "active" : ""
-                  }`}
-                >
-                  ABOUT US
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  onClick={() => handleLinkClick("/blog")}
-                  className={`nav-link ${
-                    activeLink === "/blog" ? "active" : ""
-                  }`}
-                >
-                  BLOG
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  onClick={() => handleLinkClick("/contact-us")}
-                  className={`nav-link ${
-                    activeLink === "/contact-us" ? "active" : ""
-                  }`}
-                >
-                  CONTACT US
-                </a>
-              </li>
+              {quickLinks.map((link, index) => (
+                <li className="nav-item" key={index}>
+                  <a
+                    onClick={() => handleLinkClick(link.url)}
+                    className={`nav-link ${
+                      activeLink === link.url ? "active" : ""
+                    }`}
+                  >
+                    {link.title.toUpperCase()}
+                  </a>
+                </li>
+              ))}
             </ul>
             <div className="others-option d-flex align-items-center">
               <div className="option-item">
@@ -134,76 +117,28 @@ const Nabar = () => {
             aria-label="Close"
             className="close-btn"
           >
-            <i data-feather="x"></i>
+            <FontAwesomeIcon icon={faX} spin />
           </button>
         </div>
         <div className="offcanvas-body">
           <div className="accordion" id="navbarAccordion">
-            <div className="accordion-item">
-              <button
-                className={`accordion-button without-icon ${
-                  activeLink === "/" ? "active" : ""
-                }`}
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded={activeLink === "/"}
-                aria-controls="collapseOne"
-                onClick={() => handleLinkClick("/")}
-              >
-                <a className="accordion-link">HOME</a>
-              </button>
-            </div>
-            <div className="accordion-item">
-              <button
-                className={`accordion-button without-icon ${
-                  activeLink === "/services" ? "active" : ""
-                }`}
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded={activeLink === "/services"}
-                aria-controls="collapseTwo"
-                onClick={() => handleLinkClick("/services")}
-              >
-                <a className="accordion-link">SERVICES</a>
-              </button>
-            </div>
-            <div className="accordion-item">
-              <button
-                className={`accordion-button without-icon ${
-                  activeLink === "/about-us" ? "active" : ""
-                }`}
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded={activeLink === "/about-us"}
-                aria-controls="collapseThree"
-                onClick={() => handleLinkClick("/about-us")}
-              >
-                <a className="accordion-link">ABOUT US</a>
-              </button>
-            </div>
-            <div className="accordion-item">
-              <a
-                className={`accordion-button without-icon ${
-                  activeLink === "/blog" ? "active" : ""
-                }`}
-                onClick={() => handleLinkClick("/blog")}
-              >
-                BLOG
-              </a>
-            </div>
-            <div className="accordion-item">
-              <a
-                className={`accordion-button without-icon ${
-                  activeLink === "/contact-us" ? "active" : ""
-                }`}
-                onClick={() => handleLinkClick("/contact-us")}
-              >
-                CONTACT US
-              </a>
-            </div>
+            {quickLinks.map((link, index) => (
+              <div className="accordion-item" key={index}>
+                <button
+                  className={`accordion-button without-icon ${
+                    activeLink === link.url ? "active" : ""
+                  }`}
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#collapse${index}`}
+                  aria-expanded={activeLink === link.url}
+                  aria-controls={`collapse${index}`}
+                  onClick={() => handleLinkClick(link.url)}
+                >
+                  <a className="accordion-link">{link.title.toUpperCase()}</a>
+                </button>
+              </div>
+            ))}
           </div>
           <div className="others-option d-flex align-items-center justify-content-center">
             <div className="option-item">

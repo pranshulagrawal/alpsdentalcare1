@@ -240,25 +240,6 @@ const Home = () => {
       {/* <!-- End Category Area -->
 
     <!-- Start Advertise Area --> */}
-      <div className="advertise-area">
-        <div className="container-fluid">
-          <div className="advertise-view-content">
-            <h1>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span className="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span className="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span className="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span className="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-              <span className="slash">/</span>
-              <span>REAL PEOPLE. REAL RESULTS</span>
-            </h1>
-          </div>
-        </div>
-      </div>
       {/* <!-- End Advertise Area -->
 
     <!-- Start Overview Area --> */}

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,13 +12,13 @@ const Subscribe = () => {
             className="row justify-content-center align-items-end"
             data-cues="slideInUp"
           >
-            <div className="col-lg-7 col-md-12">
+            <div className="col-lg-8 col-md-12">
               <div className="subscribe-content">
                 <span className="sub">Healthy News And Solutions</span>
                 <h3>Book your appointment</h3>
               </div>
             </div>
-            <div className="col-lg-5 col-md-12">
+            <div className="col-lg-4 col-md-12">
               <a
                 href="#"
                 onClick={() => navigate("/appointment")}

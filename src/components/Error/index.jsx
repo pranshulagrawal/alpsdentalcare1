@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +12,9 @@ const Error = () => {
             <h2>404 Error Page</h2>
             <ul class="list">
               <li>
-                <a href="#">HOME</a>
+                <a href="#" onClick={navigate("/")}>
+                  HOME
+                </a>
               </li>
               <li>404 ERROR PAGE</li>
             </ul>

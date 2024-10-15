@@ -28,6 +28,20 @@
     { "platform": "Instagram", "url": "https://instagram.com/yourprofile" },
     { "platform": "Linkedin", "url": "https://linkedin.com/in/yourprofile" }
   ],
+  "quickLinks": [
+    { "title": "Home", "url": "/" },
+    { "title": "About Us", "url": "/about-us" },
+    { "title": "Services", "url": "/services" },
+    { "title": "Blog", "url": "/blog" },
+    { "title": "Contact Us", "url": "/contact-us" }
+  ],
+  "legalLinks": [
+    { "title": "Terms & Conditions", "url": "terms-conditions.html" },
+    { "title": "Privacy Policy", "url": "privacy-policy.html" },
+    { "title": "Help Center", "url": "contact-us.html" }
+  ],
+  "location": "2nd Floor, Shop no. 2032, JMS Crosswalk, Sector 93, Gurugram, Haryana 122505",
+  "phone": "+91 8447482899",
   "blogs": [
     {
       "id": 1,
