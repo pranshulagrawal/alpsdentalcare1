@@ -28,8 +28,11 @@ const Appointment = () => {
             name="appointment v1"
             method="post"
             data-netlify="true"
+            netlify-honeypot="bot-field"
             onSubmit="submit"
           >
+            <input type="hidden" name="form-name" value="appointment v1" />
+
             <div class="appointment-wrap-inner" data-cues="slideInUp">
               <h3>Your Contact Information:</h3>
               <div class="row justify-content-center">
@@ -50,9 +53,9 @@ const Appointment = () => {
                     <label>Phone Number</label>
                     <input
                       required
-                      type="number"
+                      type="tel"
                       class="form-control"
-                      name="phone number"
+                      name="phone-number"
                       placeholder="___-___-____"
                     />
                   </div>
@@ -61,6 +64,7 @@ const Appointment = () => {
                   <div class="form-group">
                     <label>Email Address</label>
                     <input
+                      required
                       type="email"
                       class="form-control"
                       name="email"
@@ -68,31 +72,31 @@ const Appointment = () => {
                     />
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="form-group">
-                    <label>Email Address</label>
-                    <input
-                      hidden
-                      type="email"
-                      class="form-name"
-                      value="appointment v1"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
+
             <div class="appointment-wrap-inner" data-cues="slideInUp">
               <h3>Appointment Information:</h3>
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12">
                   <div class="form-group">
                     <label>Dental Service</label>
-                    <select class="form-select form-control">
-                      <option selected>Choose services</option>
-                      <option value="1">General Dentistry</option>
-                      <option value="2">Oral Surgery</option>
-                      <option value="3">Teeth Whitening</option>
-                      <option value="4">Cosmetic Dentistry</option>
+                    <select
+                      required
+                      class="form-select form-control"
+                      name="dental-service"
+                    >
+                      <option selected disabled>
+                        Choose services
+                      </option>
+                      <option value="General Dentistry">
+                        General Dentistry
+                      </option>
+                      <option value="Oral Surgery">Oral Surgery</option>
+                      <option value="Teeth Whitening">Teeth Whitening</option>
+                      <option value="Cosmetic Dentistry">
+                        Cosmetic Dentistry
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -100,24 +104,23 @@ const Appointment = () => {
                   <div class="form-group">
                     <label>Date Of Appointment</label>
                     <input
+                      required
                       type="date"
                       class="form-control"
-                      name="date"
-                      placeholder="DD/MM/YYYY"
+                      name="appointment-date"
                     />
                   </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
                   <div class="form-group">
-                    <div class="form-group">
-                      <label>Time</label>
-                      <input
-                        name="time"
-                        type="time"
-                        class="form-control"
-                        placeholder="Enter your time"
-                      />
-                    </div>
+                    <label>Time</label>
+                    <input
+                      required
+                      name="appointment-time"
+                      type="time"
+                      class="form-control"
+                      placeholder="Enter your time"
+                    />
                   </div>
                 </div>
                 <div class="col-lg-12 col-md-12">
@@ -142,6 +145,7 @@ const Appointment = () => {
           </form>
         </div>
       </div>
+
       {/* <!-- End Appointment Wrap Area -->
 
     <!-- Start CTA Area --> */}
