@@ -24,7 +24,13 @@ const Appointment = () => {
     <!-- Start Appointment Wrap Area --> */}
       <div class="appointment-wrap-area ptb-150">
         <div class="container">
-          <form netlify>
+          <form
+            name="appointment"
+            method="post"
+            data-netlify="true"
+            onSubmit="submit"
+            netlify
+          >
             <div class="appointment-wrap-inner" data-cues="slideInUp">
               <h3>Your Contact Information:</h3>
               <div class="row justify-content-center">
@@ -32,8 +38,10 @@ const Appointment = () => {
                   <div class="form-group">
                     <label>Patient Name</label>
                     <input
+                      required
                       type="text"
                       class="form-control"
+                      name="patient-name"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -42,8 +50,10 @@ const Appointment = () => {
                   <div class="form-group">
                     <label>Phone Number</label>
                     <input
+                      required
                       type="number"
                       class="form-control"
+                      name="phone number"
                       placeholder="___-___-____"
                     />
                   </div>
@@ -54,42 +64,9 @@ const Appointment = () => {
                     <input
                       type="email"
                       class="form-control"
+                      name="email"
                       placeholder="Enter your email address"
                     />
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="form-group">
-                    <label>Nationality</label>
-                    <select class="form-select form-control">
-                      <option selected>Nationality</option>
-                      <option value="1">British</option>
-                      <option value="2">Brazilian</option>
-                      <option value="3">Canadian</option>
-                      <option value="4">Germany</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="form-group">
-                    <label>Date Of Birth</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="MM/DD/YYYY"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="form-group">
-                    <label>Country Of Residence</label>
-                    <select class="form-select form-control">
-                      <option selected>Country</option>
-                      <option value="1">Australia</option>
-                      <option value="2">England</option>
-                      <option value="3">France</option>
-                      <option value="4">Germany</option>
-                    </select>
                   </div>
                 </div>
               </div>
@@ -111,34 +88,12 @@ const Appointment = () => {
                 </div>
                 <div class="col-lg-6 col-md-12">
                   <div class="form-group">
-                    <label>Preferred Doctor</label>
-                    <select class="form-select form-control">
-                      <option selected>Dr. Owen Carter, BDS</option>
-                      <option value="1">Dr. Lauren Mitchell, DMD</option>
-                      <option value="2">Dr. Ethan Reynolds, DDS</option>
-                      <option value="3">Dr. Garrett Hughes, DDS</option>
-                      <option value="4">Dr. Bradley Foster, DDS</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="form-group">
-                    <label>At The Following Hospital</label>
-                    <select class="form-select form-control">
-                      <option selected>Hospital name</option>
-                      <option value="1">Bright Smile Dental Care</option>
-                      <option value="2">Harmony Dental Studio</option>
-                      <option value="3">Evergreen Dental Oasis</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                  <div class="form-group">
                     <label>Date Of Appointment</label>
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
-                      placeholder="MM/DD/YYYY"
+                      name="date"
+                      placeholder="DD/MM/YYYY"
                     />
                   </div>
                 </div>
@@ -147,7 +102,8 @@ const Appointment = () => {
                     <div class="form-group">
                       <label>Time</label>
                       <input
-                        type="text"
+                        name="time"
+                        type="time"
                         class="form-control"
                         placeholder="Enter your time"
                       />
@@ -159,6 +115,7 @@ const Appointment = () => {
                     <label>Notes:</label>
                     <textarea
                       class="form-control"
+                      name="notes"
                       placeholder="Notes"
                     ></textarea>
                   </div>

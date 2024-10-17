@@ -22,7 +22,7 @@ const ContactUs = () => {
       {/* <!-- End Page Banner Area -->
 
     <!-- Start Contact Info Area --> */}
-      <div class="contact-info-area pt-150 pb-125">
+      <div class="contact-info-area pt-150">
         <div class="container">
           <div class="row justify-content-center" data-cues="slideInUp">
             <div class="col-xl-3 col-md-6">
@@ -52,18 +52,10 @@ const ContactUs = () => {
       </div>
       {/* <!-- End Contact Info Area -->
 
-    <!-- Start Map Area --> */}
-      <div class="map-area">
-        <iframe
-          title="dentaladdress"
-          src="https://www.google.com/maps/embed/v1/MAP_MODE?key=AIzaSyAfMVnaEwFlZ10pc9fyrHlBqX7a1Dgc2ZI&PARAMETERS"
-          allowfullscreen
-        ></iframe>
-      </div>
-      {/* <!-- End Map Area -->
+    
 
     <!-- Start Contact US Area --> */}
-      <div class="contact-us-area ptb-150">
+      <div class="contact-us-area pb-150">
         <div class="container">
           <form class="contact-us-form" data-cues="slideInUp" netlify>
             <h3>Get In Touch</h3>

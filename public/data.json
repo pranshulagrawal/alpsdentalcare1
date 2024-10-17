@@ -218,5 +218,145 @@
         "Expert in cosmetic dentistry"
       ]
     }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Cosmetic Dentistry",
+      "description": "Cosmetic dentistry mainly concerns improving the appearance of your teeth, including whitening.",
+      "image": "assets/images/services/services5.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Pediatric Dentistry",
+      "description": "Pediatric dentistry is tailored to ensure infants, children, and teens can receive the best dental care.",
+      "image": "assets/images/services/services6.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Dental Implants",
+      "description": "Dental implants replace the missing tooth by implanting artificial roots into the jaw under surgical.",
+      "image": "assets/images/services/services7.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Periodontal Therapy",
+      "description": "Periodontal therapy is technically all about restoring the diseased or damaged tissues to an original.",
+      "image": "assets/images/services/services8.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Teeth Whitening",
+      "description": "Our dentists will clean up your teeth, conduct a thorough check before covering the teeth with a new.",
+      "image": "assets/images/services/services9.jpg"
+    },
+    {
+      "id": 6,
+      "title": "General Dentistry",
+      "description": "Our dentists will clean up your teeth, conduct a thorough check before covering the teeth with a new.",
+      "image": "assets/images/services/services14.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Bonding",
+      "description": "Dental bonding helps improve the appearance of teeth by repairing chips and cracks.",
+      "image": "assets/images/services/bonding.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Checkups",
+      "description": "Regular checkups help in early detection of dental issues and maintaining oral health.",
+      "image": "assets/images/services/checkups.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Cosmetic Procedures",
+      "description": "Cosmetic procedures enhance your smile's aesthetics through various techniques.",
+      "image": "assets/images/services/cosmetic_procedures.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Dentures & Bridges",
+      "description": "Dentures and bridges are prosthetic devices that replace missing teeth.",
+      "image": "assets/images/services/dentures_bridges.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Emergency Care",
+      "description": "Emergency dental care is available for urgent issues that require immediate attention.",
+      "image": "assets/images/services/emergency_care.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Extractions",
+      "description": "Tooth extractions involve the removal of teeth that are damaged or decayed.",
+      "image": "assets/images/services/extractions.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Fillings & Sealants",
+      "description": "Fillings repair cavities, while sealants protect teeth from decay.",
+      "image": "assets/images/services/fillings_sealants.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Laser Dentistry",
+      "description": "Laser dentistry uses lasers to treat various dental conditions effectively and painlessly.",
+      "image": "assets/images/services/laser_dentistry.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Mouth Guards",
+      "description": "Mouth guards protect teeth from injury during sports or teeth grinding.",
+      "image": "assets/images/services/mouth_guards.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Online Dentist Booking",
+      "description": "Book your dental appointments online for convenience and ease.",
+      "image": "assets/images/services/online_booking.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Oral Surgery",
+      "description": "Oral surgery includes procedures like wisdom teeth removal and jaw surgery.",
+      "image": "assets/images/services/oral_surgery.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Pediatrics",
+      "description": "Pediatric dentistry focuses on the dental care of children from infancy to adolescence.",
+      "image": "assets/images/services/pediatrics.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Root Canals",
+      "description": "Root canals treat infected or damaged tooth pulp to relieve pain and save the tooth.",
+      "image": "assets/images/services/root_canals.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Teeth Cleaning",
+      "description": "Professional teeth cleaning removes plaque and tartar to maintain oral health.",
+      "image": "assets/images/services/teeth_cleaning.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Teeth Reshaping",
+      "description": "Teeth reshaping involves altering the length, shape, or surface of the teeth.",
+      "image": "assets/images/services/teeth_reshaping.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Veneers & Crowns",
+      "description": "Veneers and crowns cover damaged teeth to improve their appearance and function.",
+      "image": "assets/images/services/veneers_crowns.jpg"
+    },
+    {
+      "id": 23,
+      "title": "X-ray",
+      "description": "Dental X-rays help diagnose issues below the surface that are not visible during exams.",
+      "image": "assets/images/services/xray.jpg"
+    }
   ]
 }

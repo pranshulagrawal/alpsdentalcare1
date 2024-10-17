@@ -1,10 +1,26 @@
-import React from "react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useEffect, useState } from "react";
 import Testimonial from "../Testimonial";
 import { useNavigate } from "react-router-dom";
 import Subscribe from "../Subscribe";
 
 const Services = () => {
   const navigate = useNavigate();
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("data.json"); // Update the path accordingly
+        const data = await response.json();
+        setServices(data.services);
+      } catch (error) {
+        console.error("Error fetching the services data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
       <div class="page-banner-area">
@@ -23,7 +39,7 @@ const Services = () => {
       {/* <!-- End Page Banner Area -->
         
         <!-- Start Services Wrap Area --> */}
-      <div class="services-wrap-area without-bg-color ptb-150">
+      {/* <div class="services-wrap-area without-bg-color ptb-150">
         <div class="container" data-cues="slideInUp">
           <div class="services-wrap-item" id="services-element1">
             <div class="row justify-content-center align-items-center">
@@ -277,6 +293,43 @@ const Services = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div> */}
+      <div className="services-wrap-area without-bg-color ptb-150">
+        <div className="container" data-cues="slideInUp">
+          {services.map((service, index) => (
+            <div className="services-wrap-item" key={service.id}>
+              <div className="row justify-content-center align-items-center">
+                <div className="col-lg-5 col-md-12">
+                  <div className="services-left">
+                    <div className="number">{index + 1}</div>
+                    <h3>
+                      <a>{service.title}</a>
+                    </h3>
+                    <div className="arrow-btn">
+                      <a>
+                        <i className="flaticon-up-right-arrow"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-5 col-md-12">
+                  <div className="services-middle">
+                    <p>{service.description}</p>
+                  </div>
+                </div>
+                <div className="col-lg-2 col-md-12">
+                  <div className="services-right">
+                    <div className="arrow-btn">
+                      <a>
+                        <i className="flaticon-up-right-arrow"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       {/* <!-- End Services Wrap Area -->
