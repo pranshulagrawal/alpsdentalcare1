@@ -2,28 +2,32 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { faFeather, faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faFeather } from "@fortawesome/free-solid-svg-icons";
 import { faSuitcaseMedical } from "@fortawesome/free-solid-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import Testimonial from "../Testimonial";
 import Subscribe from "../Subscribe";
-import { Link } from "react-router-dom";
+import HomeBlog from "../Blog/homeblog";
+import Doctors from "../Dentist";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [testimonial, setTestimonial] = useState([]);
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await fetch("/data.json"); // Update the path accordingly
-        const data = await response.json();
-        setBlogs(data.blogs.slice(-3)); // Get the last 3 blogs
-      } catch (error) {
-        console.error("Error fetching blog data:", error);
-      }
-    };
-
-    fetchBlogs();
+    // Fetch the data from the data.json file
+    fetch("data.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // Return the parsed JSON
+      })
+      .then((data) => {
+        setTestimonial(data?.testimonials || []);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
   return (
     <>
@@ -63,59 +67,22 @@ const Home = () => {
           className="swiper dental-treatment-review-slider"
           style={{ marginRight: 0 }}
         >
-          <SwiperSlide className="swiper-slide">
-            <div className="dental-treatment-review-card">
-              <div className="user">
-                <img src="assets/images/user/img1.png" alt="Allison Hayes" />
-                <h5>Allison Hayes</h5>
-              </div>
-              <div className="content">
-                <p>
-                  “I've been a patient at Doral for several years now, & the
-                  exceptional care.”
-                </p>
-                <div className="quote">
-                  <i className="flaticon-quote"></i>
+          {testimonial.map((item) => (
+            <SwiperSlide className="swiper-slide" key={item.id}>
+              <div className="dental-treatment-review-card">
+                <div className="user">
+                  <img src={item.image} alt={item.name} />
+                  <h5>{item.name}</h5>
+                </div>
+                <div className="content">
+                  <p>{item.quote}</p>
+                  <div className="quote">
+                    <i className="flaticon-quote"></i>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide className="swiper-slide">
-            <div className="dental-treatment-review-card">
-              <div className="user">
-                <img src="assets/images/user/img2.png" alt="Sarah Johnson" />
-                <h5>Sarah Johnson</h5>
-              </div>
-              <div className="content wrap2">
-                <p>
-                  “From the moment I walked in, I was greeted by a warm and
-                  welcoming staff.”
-                </p>
-                <div className="quote">
-                  <i className="flaticon-quote"></i>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide className="swiper-slide">
-            <div className="dental-treatment-review-card">
-              <div className="user">
-                <img src="assets/images/user/img3.png" alt="Jessica Taylor" />
-                <h5>Jessica Taylor</h5>
-              </div>
-              <div className="content wrap3">
-                <p>
-                  “The facilities & equipment at Doral were impressive, further
-                  enhancing doral.”
-                </p>
-                <div className="quote">
-                  <i className="flaticon-quote"></i>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
         <div className="dental-treatment-ratings">
           <h5>
@@ -173,7 +140,7 @@ const Home = () => {
           <div className="row justify-content-center" data-cues="slideInUp">
             <div className="col-xxl-4 col-md-6">
               <div className="category-card">
-                <img src="assets/images/category/category1.jpg" alt="image" />
+                <img src="assets/images/category/category1.jpg" alt="image1" />
                 <ul className="list">
                   <li>
                     Hours <strong>1.3 - 2</strong>
@@ -194,7 +161,7 @@ const Home = () => {
             </div>
             <div className="col-xxl-4 col-md-6">
               <div className="category-card">
-                <img src="assets/images/category/category2.jpg" alt="image" />
+                <img src="assets/images/category/category2.jpg" alt="image2" />
                 <ul className="list">
                   <li>
                     Hours <strong>1 - 2</strong>
@@ -215,7 +182,7 @@ const Home = () => {
             </div>
             <div className="col-xxl-4 col-md-6">
               <div className="category-card">
-                <img src="assets/images/category/category3.jpg" alt="image" />
+                <img src="assets/images/category/category3.jpg" alt="image3" />
                 <ul className="list">
                   <li>
                     Hours <strong>1 - 1.4</strong>
@@ -257,7 +224,7 @@ const Home = () => {
                 </h2>
                 <div className="inner">
                   <div className="icon">
-                    <img src="assets/images/overview/icon1.png" alt="image" />
+                    <img src="assets/images/overview/icon1.png" alt="image1" />
                   </div>
                   <div className="title">
                     <h3>Safety First</h3>
@@ -269,7 +236,7 @@ const Home = () => {
                 </div>
                 <div className="inner">
                   <div className="icon">
-                    <img src="assets/images/overview/icon2.png" alt="image" />
+                    <img src="assets/images/overview/icon2.png" alt="image2" />
                   </div>
                   <div className="title">
                     <h3>Insurance Accepted</h3>
@@ -281,7 +248,7 @@ const Home = () => {
                 </div>
                 <div className="inner">
                   <div className="icon">
-                    <img src="assets/images/overview/icon3.png" alt="image" />
+                    <img src="assets/images/overview/icon3.png" alt="image3" />
                   </div>
                   <div className="title">
                     <h3>Full Service Dentistry</h3>
@@ -677,841 +644,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <!-- End Appointment Area -->
 
-    <!-- Start Real Results Wrap Area --> */}
-      <div className="real-results-wrap-area pt-150 pb-125">
-        <div className="container">
-          <div className="section-title" data-cues="slideInUp">
-            <h2>Real People, Real Results.</h2>
-          </div>
-          <div className="swiper real-results-card-slider">
-            <div className="swiper-wrapper" data-cues="slideInUp">
-              <div className="swiper-slide">
-                <div className="real-results-wrap-card">
-                  <img
-                    src="assets/images/real-results/large1.jpg"
-                    alt="image"
-                  />
-                  <h3>Tooth Extraction</h3>
-                  <a href="real-result.html" className="real-result-btn">
-                    <i className="flaticon-up-right-arrow"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="real-results-wrap-card">
-                  <img
-                    src="assets/images/real-results/large2.jpg"
-                    alt="image"
-                  />
-                  <h3>Teeth Whitening</h3>
-                  <a href="real-result.html" className="real-result-btn">
-                    <i className="flaticon-up-right-arrow"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="real-results-wrap-card">
-                  <img
-                    src="assets/images/real-results/large3.jpg"
-                    alt="image"
-                  />
-                  <h3>Dental Implants</h3>
-                  <a href="real-result.html" className="real-result-btn">
-                    <i className="flaticon-up-right-arrow"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="real-results-wrap-card">
-                  <img
-                    src="assets/images/real-results/large1.jpg"
-                    alt="image"
-                  />
-                  <h3>Tooth Extraction</h3>
-                  <a href="real-result.html" className="real-result-btn">
-                    <i className="flaticon-up-right-arrow"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="real-results-wrap-card">
-                  <img
-                    src="assets/images/real-results/large2.jpg"
-                    alt="image"
-                  />
-                  <h3>Teeth Whitening</h3>
-                  <a href="real-result.html" className="real-result-btn">
-                    <i className="flaticon-up-right-arrow"></i>
-                  </a>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="real-results-wrap-card">
-                  <img
-                    src="assets/images/real-results/large3.jpg"
-                    alt="image"
-                  />
-                  <h3>Dental Implants</h3>
-                  <a href="real-result.html" className="real-result-btn">
-                    <i className="flaticon-up-right-arrow"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <!-- End Real Results Wrap Area -->
-
-    <!-- Start Review Wrap Area --> */}
-      {/* <div className="review-wrap-area bg-with-primary-color pt-150">
-        <div className="container-fluid">
-          <div className="review-wrap-content" data-cues="slideInUp">
-            <h2>Compassionate Patient-Focused Oral And Maxillofacial Care</h2>
-            <p>
-              We take great pride in providing exceptional dental care and
-              ensuring a positive experience for each of our valued patients.
-            </p>
-            <ul className="list">
-              <li>
-                <i data-feather="check"></i>
-                Complimentary initial consultation
-              </li>
-              <li>
-                <i data-feather="check"></i>
-                Convenient hours to suit any life style
-              </li>
-              <li>
-                <i data-feather="check"></i>
-                Modern treatment and equipment's
-              </li>
-            </ul>
-            <div className="review-btn">
-              <a href="appointment.html" className="default-btn">
-                Book Appointment
-              </a>
-            </div>
-          </div>
-          <div className="swiper review-wrap-slider">
-            <div className="swiper-wrapper" data-cues="slideInUp">
-              <div className="swiper-slide">
-                <div className="review-wrap-card">
-                  <ul className="rating">
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                  </ul>
-                  <p>
-                    “I recently had the pleasure of visiting Doral for a dental
-                    check-up, and I couldn't be more impressed. From the moment
-                    I walked in, the friendly and welcoming staff set the tone
-                    for a positive experience.”
-                  </p>
-                  <div className="info">
-                    <div className="title">
-                      <img src="assets/images/user/img1.png" alt="image" />
-                      <h5>Allison Hayes</h5>
-                    </div>
-                    <div className="quote">
-                      <i className="flaticon-quote"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="review-wrap-card">
-                  <ul className="rating">
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                  </ul>
-                  <p>
-                    “I must recommend Doral enough! From the moment I walked in,
-                    I felt welcomed and cared for. The staff was incredibly
-                    friendly and professional, and my dentist was thorough and
-                    attentive.”
-                  </p>
-                  <div className="info">
-                    <div className="title">
-                      <img src="assets/images/user/img2.png" alt="image" />
-                      <h5>Samantha Hernandez</h5>
-                    </div>
-                    <div className="quote">
-                      <i className="flaticon-quote"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="review-wrap-card">
-                  <ul className="rating">
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                  </ul>
-                  <p>
-                    “Five stars for Doral Service! I recently had a dental
-                    emergency and was able to get an appointment right away.
-                    They took the time to listen to my concerns and address them
-                    with care.”
-                  </p>
-                  <div className="info">
-                    <div className="title">
-                      <img src="assets/images/user/img3.png" alt="image" />
-                      <h5>Christopher Taylor</h5>
-                    </div>
-                    <div className="quote">
-                      <i className="flaticon-quote"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="review-wrap-card">
-                  <ul className="rating">
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                  </ul>
-                  <p>
-                    “I recently had the pleasure of visiting Doral for a dental
-                    check-up, and I couldn't be more impressed. From the moment
-                    I walked in, the friendly and welcoming staff set the tone
-                    for a positive experience.”
-                  </p>
-                  <div className="info">
-                    <div className="title">
-                      <img src="assets/images/user/img1.png" alt="image" />
-                      <h5>Allison Hayes</h5>
-                    </div>
-                    <div className="quote">
-                      <i className="flaticon-quote"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="review-wrap-card">
-                  <ul className="rating">
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                  </ul>
-                  <p>
-                    “I must recommend Doral enough! From the moment I walked in,
-                    I felt welcomed and cared for. The staff was incredibly
-                    friendly and professional, and my dentist was thorough and
-                    attentive.”
-                  </p>
-                  <div className="info">
-                    <div className="title">
-                      <img src="assets/images/user/img2.png" alt="image" />
-                      <h5>Samantha Hernandez</h5>
-                    </div>
-                    <div className="quote">
-                      <i className="flaticon-quote"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <div className="review-wrap-card">
-                  <ul className="rating">
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                    <li>
-                      <i className="flaticon-star"></i>
-                    </li>
-                  </ul>
-                  <p>
-                    “Five stars for Doral Service! I recently had a dental
-                    emergency and was able to get an appointment right away.
-                    They took the time to listen to my concerns and address them
-                    with care.”
-                  </p>
-                  <div className="info">
-                    <div className="title">
-                      <img src="assets/images/user/img3.png" alt="image" />
-                      <h5>Christopher Taylor</h5>
-                    </div>
-                    <div className="quote">
-                      <i className="flaticon-quote"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="review-wrap-pagination"></div>
-          </div>
-        </div>
-      </div> */}
       <Testimonial />
-      {/* <!-- End Review Wrap Area -->
 
-    <!-- Start Doctors Area --> */}
-      <div className="doctors-area with-bg-transparent pt-150">
-        <div className="container">
-          <div
-            className="row justify-content-center align-items-center"
-            data-cues="slideInUp"
-          >
-            <div className="col-xl-6 col-md-12">
-              <div className="doctors-inner">
-                <h2>Our Expert Dentist</h2>
-                <div
-                  className="row justify-content-center"
-                  data-cues="slideInUp"
-                >
-                  <div className="col-lg-6 col-md-6">
-                    <div className="doctors-circle-card">
-                      <div className="doctor-image">
-                        <a href="dentist-profile.html">
-                          <img
-                            src="assets/images/doctors/circle1.png"
-                            alt="image"
-                          />
-                        </a>
-                        <ul className="social">
-                          <li>
-                            <a
-                              href="../../../www.facebook.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../twitter.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../www.instagram.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://bd.linkedin.com/" target="_blank">
-                              <i data-feather="linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="doctor-content">
-                        <h3>
-                          <a href="dentist-profile.html">
-                            Dr. Lauren Mitchell, DMD
-                          </a>
-                        </h3>
-                        <span>Dentist-Surgeon</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6">
-                    <div className="doctors-circle-card">
-                      <div className="doctor-image">
-                        <a href="dentist-profile.html">
-                          <img
-                            src="assets/images/doctors/circle2.png"
-                            alt="image"
-                          />
-                        </a>
-                        <ul className="social">
-                          <li>
-                            <a
-                              href="../../../www.facebook.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../twitter.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../www.instagram.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://bd.linkedin.com/" target="_blank">
-                              <i data-feather="linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="doctor-content">
-                        <h3>
-                          <a href="dentist-profile.html">
-                            Dr. Ethan Reynolds, DDS
-                          </a>
-                        </h3>
-                        <span>Dentist-Consultant</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6">
-                    <div className="doctors-circle-card">
-                      <div className="doctor-image">
-                        <a href="dentist-profile.html">
-                          <img
-                            src="assets/images/doctors/circle3.png"
-                            alt="image"
-                          />
-                        </a>
-                        <ul className="social">
-                          <li>
-                            <a
-                              href="../../../www.facebook.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../twitter.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../www.instagram.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://bd.linkedin.com/" target="_blank">
-                              <i data-feather="linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="doctor-content">
-                        <h3>
-                          <a href="dentist-profile.html">
-                            Dr. Garrett Hughes, DDS
-                          </a>
-                        </h3>
-                        <span>Dental Technician</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6">
-                    <div className="doctors-circle-card">
-                      <div className="doctor-image">
-                        <a href="dentist-profile.html">
-                          <img
-                            src="assets/images/doctors/circle4.png"
-                            alt="image"
-                          />
-                        </a>
-                        <ul className="social">
-                          <li>
-                            <a
-                              href="../../../www.facebook.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../twitter.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="../../../www.instagram.com/index.html"
-                              target="_blank"
-                            >
-                              <i data-feather="instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://bd.linkedin.com/" target="_blank">
-                              <i data-feather="linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="doctor-content">
-                        <h3>
-                          <a href="dentist-profile.html">
-                            Dr. Bradley Foster, DDS
-                          </a>
-                        </h3>
-                        <span>Maxillofacial Surgeon</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-6 col-md-12">
-              <div className="doctors-faq-content">
-                <h2>Frequently Asked Questions</h2>
-                <div className="doctors-accordion">
-                  <div className="accordion" id="faqAccordion">
-                    <div className="accordion-item">
-                      <button
-                        className="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse-1"
-                        aria-expanded="false"
-                        aria-controls="collapse-1"
-                      >
-                        Do you accept walk-ins?
-                        <div className="plus">
-                          <FontAwesomeIcon icon={faPlus} />
-                        </div>
-                        <div className="minus">
-                          <FontAwesomeIcon icon={faMinus} />
-                        </div>
-                      </button>
-                      <div
-                        id="collapse-1"
-                        className="accordion-collapse collapse show"
-                        data-bs-parent="#faqAccordion"
-                      >
-                        <div className="accordion-body">
-                          <p>
-                            Dr. Vanessa Harper, DMD, our esteemed dentist, was
-                            awarded the top dentist award by dental association,
-                            recognizing his expertise, skill, and contributions
-                            to the field of dentistry.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse-2"
-                        aria-expanded="false"
-                        aria-controls="collapse-2"
-                      >
-                        How can I schedule an appointment for emergency
-                        services?
-                        <div className="plus">
-                          <FontAwesomeIcon icon={faPlus} />
-                        </div>
-                        <div className="minus">
-                          <FontAwesomeIcon icon={faMinus} />
-                        </div>
-                      </button>
-                      <div
-                        id="collapse-2"
-                        className="accordion-collapse collapse"
-                        data-bs-parent="#faqAccordion"
-                      >
-                        <div className="accordion-body">
-                          <p>
-                            Dr. Vanessa Harper, DMD, our esteemed dentist, was
-                            awarded the top dentist award by dental association,
-                            recognizing his expertise, skill, and contributions
-                            to the field of dentistry.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse-3"
-                        aria-expanded="false"
-                        aria-controls="collapse-3"
-                      >
-                        Do you accept dental insurance?
-                        <div className="plus">
-                          <FontAwesomeIcon icon={faPlus} />
-                        </div>
-                        <div className="minus">
-                          <FontAwesomeIcon icon={faMinus} />
-                        </div>
-                      </button>
-                      <div
-                        id="collapse-3"
-                        className="accordion-collapse collapse"
-                        data-bs-parent="#faqAccordion"
-                      >
-                        <div className="accordion-body">
-                          <p>
-                            Dr. Vanessa Harper, DMD, our esteemed dentist, was
-                            awarded the top dentist award by dental association,
-                            recognizing his expertise, skill, and contributions
-                            to the field of dentistry.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse-4"
-                        aria-expanded="false"
-                        aria-controls="collapse-4"
-                      >
-                        Do you offer emergency dental services?
-                        <div className="plus">
-                          <FontAwesomeIcon icon={faPlus} />
-                        </div>
-                        <div className="minus">
-                          <FontAwesomeIcon icon={faMinus} />
-                        </div>
-                      </button>
-                      <div
-                        id="collapse-4"
-                        className="accordion-collapse collapse"
-                        data-bs-parent="#faqAccordion"
-                      >
-                        <div className="accordion-body">
-                          <p>
-                            Dr. Vanessa Harper, DMD, our esteemed dentist, was
-                            awarded the top dentist award by dental association,
-                            recognizing his expertise, skill, and contributions
-                            to the field of dentistry.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse-5"
-                        aria-expanded="false"
-                        aria-controls="collapse-5"
-                      >
-                        How can I finance my dental treatment if I don't have
-                        insurance?
-                        <div className="plus">
-                          <FontAwesomeIcon icon={faPlus} />
-                        </div>
-                        <div className="minus">
-                          <FontAwesomeIcon icon={faMinus} />
-                        </div>
-                      </button>
-                      <div
-                        id="collapse-5"
-                        className="accordion-collapse collapse"
-                        data-bs-parent="#faqAccordion"
-                      >
-                        <div className="accordion-body">
-                          <p>
-                            Dr. Vanessa Harper, DMD, our esteemed dentist, was
-                            awarded the top dentist award by dental association,
-                            recognizing his expertise, skill, and contributions
-                            to the field of dentistry.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <button
-                        className="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapse-6"
-                        aria-expanded="false"
-                        aria-controls="collapse-6"
-                      >
-                        How can I improve my oral hygiene routine?
-                        <div className="plus">
-                          <FontAwesomeIcon icon={faPlus} />
-                        </div>
-                        <div className="minus">
-                          <FontAwesomeIcon icon={faMinus} />
-                        </div>
-                      </button>
-                      <div
-                        id="collapse-6"
-                        className="accordion-collapse collapse"
-                        data-bs-parent="#faqAccordion"
-                      >
-                        <div className="accordion-body">
-                          <p>
-                            Dr. Vanessa Harper, DMD, our esteemed dentist, was
-                            awarded the top dentist award by dental association,
-                            recognizing his expertise, skill, and contributions
-                            to the field of dentistry.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <!-- End Doctors Area -->
-
-    <!-- Start Blog Area --> */}
-      <div className="blog-area pt-150 pb-125">
-        <div className="container">
-          <div className="section-title" data-cues="slideInUp">
-            <h2>Find Our Latest Articles</h2>
-          </div>
-          <div
-            className="row justify-content-center align-items-center"
-            data-cues="slideInUp"
-          >
-            {blogs.length > 0 && (
-              <>
-                <div className="col-lg-6 col-md-12">
-                  <div className="blog-item">
-                    <Link to={`/blog/${blogs[2].id}`}>
-                      <img src={blogs[2].image} alt="image" />
-                    </Link>
-                    <div className="content">
-                      <h3>
-                        <Link to={`/blog/${blogs[2].id}`}>
-                          {blogs[2].title}
-                        </Link>
-                      </h3>
-                      <ul className="meta">
-                        <li>{blogs[2].date}</li>
-                        <li>
-                          <Link to={`/blog/${blogs[2].id}`}>
-                            {blogs[2].category}
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-12">
-                  <div className="row justify-content-center">
-                    {blogs.slice(0, 2).map((blog) => (
-                      <div key={blog.id} className="col-lg-12 col-md-6">
-                        <div className="blog-item">
-                          <Link to={`/blog/${blog.id}`}>
-                            <img src={blog.image} alt="image" />
-                          </Link>
-                          <div className="content little-wrap">
-                            <h3>
-                              <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
-                            </h3>
-                            <Link
-                              to={`/blog/${blogs[2].id}`}
-                              className="tag-btn"
-                            >
-                              {blog.category}
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
+      {/* <!-- Start Doctors Area -->  */}
+      <Doctors />
+      <HomeBlog />
       <Subscribe />
     </>
   );

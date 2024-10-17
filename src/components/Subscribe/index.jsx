@@ -20,7 +20,6 @@ const Subscribe = () => {
             </div>
             <div className="col-lg-4 col-md-12">
               <a
-                href="#"
                 onClick={() => navigate("/appointment")}
                 className="default-btn"
               >

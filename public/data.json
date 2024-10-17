@@ -3,21 +3,21 @@
     {
       "id": 1,
       "name": "Allison Hayes",
-      "image": "assets/images/user/img1.png",
+      "image": "assets/images/testimonial/img1.jpg",
       "quote": "“I recently had the pleasure of visiting Doral for a dental check-up, and I couldn't be more impressed. From the moment I walked in, the friendly and welcoming staff set the tone for a positive experience.”",
       "rating": 5
     },
     {
       "id": 2,
       "name": "Samantha Hernandez",
-      "image": "assets/images/user/img2.png",
+      "image": "assets/images/testimonial/img2.jpg",
       "quote": "“I must recommend Doral enough! From the moment I walked in, I felt welcomed and cared for. The staff was incredibly friendly and professional, and my dentist was thorough and attentive.”",
       "rating": 5
     },
     {
       "id": 3,
       "name": "Christopher Taylor",
-      "image": "assets/images/user/img3.png",
+      "image": "assets/images/testimonial/img3.jpg",
       "quote": "“Five stars for Doral Service! I recently had a dental emergency and was able to get an appointment right away. They took the time to listen to my concerns and address them with care.”",
       "rating": 5
     }
@@ -123,6 +123,44 @@
       "category": "DENTAL",
       "date": "5 Jun, 2024",
       "content": "Learn how to care for your oral health during pregnancy for you and your baby."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you accept walk-ins?",
+      "answer": "At 1 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "How can I schedule an appointment for emergency services?",
+      "answer": "At 2 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "Do you accept dental insurance?",
+      "answer": "At 3  Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "Do you offer emergency dental services?",
+      "answer": "At 4 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "How can I finance my dental treatment if I don't have insurance?",
+      "answer": "At 5 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "How can I improve my oral hygiene routine?",
+      "answer": "At 6 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "Do you offer emergency dental services?",
+      "answer": "At 7 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "How can I finance my dental treatment if I don't have insurance?",
+      "answer": "At 8 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
+    },
+    {
+      "question": "How can I improve my oral hygiene routine?",
+      "answer": "At 9 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
     }
   ]
 }

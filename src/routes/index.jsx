@@ -11,6 +11,7 @@ import Nabar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Preloader from "../components/Preloader";
 import Error from "../components/Error";
+import FAQ from "../components/FAQ";
 
 const AppRoutes = () => {
   const [loading, setLoading] = useState(true); // Initially true for the first load
@@ -41,6 +42,7 @@ const AppRoutes = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="*" element={<Error />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       )}
       <Footer />

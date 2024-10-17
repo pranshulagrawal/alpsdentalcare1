@@ -150,7 +150,7 @@
   };
 
   // Dental Clinic Slider JS
-  var swiper = new swiper(".dental-clinic-slider", {
+  var swiper = new Swiper(".dental-clinic-slider", {
     effect: "fade",
     loop: true,
     grabCursor: true,
@@ -167,7 +167,7 @@
   });
 
   // Doctors Swiper JS
-  var SwiperTraveler = new swiper(".doctors-slider", {
+  var SwiperTraveler = new Swiper(".doctors-slider", {
     loop: true,
     spaceBetween: 25,
     autoplay: {
@@ -198,7 +198,7 @@
   });
 
   // Review Swiper JS
-  var SwiperTraveler = new swiper(".review-slider", {
+  var SwiperTraveler = new Swiper(".review-slider", {
     loop: true,
     spaceBetween: 25,
     autoplay: {
@@ -222,7 +222,7 @@
   });
 
   // Review Wrap Swiper JS
-  var SwiperTraveler = new swiper(".review-wrap-slider", {
+  var SwiperTraveler = new Swiper(".review-wrap-slider", {
     loop: true,
     spaceBetween: 25,
     autoplay: {
@@ -250,7 +250,7 @@
   });
 
   // Real Results Swiper JS
-  var SwiperTraveler = new swiper(".real-results-slider", {
+  var SwiperTraveler = new Swiper(".real-results-slider", {
     loop: true,
     spaceBetween: 65,
     autoplay: {
@@ -278,7 +278,7 @@
   });
 
   // Real Results Wrap Swiper JS
-  var swiper = new swiper(".real-results-wrap-slider", {
+  var swiper = new Swiper(".real-results-wrap-slider", {
     effect: "cards",
     grabCursor: true,
     slidesPerView: 1,
@@ -294,7 +294,7 @@
   });
 
   // Real Results Card Slider JS
-  var SwiperTraveler = new swiper(".real-results-card-slider", {
+  var SwiperTraveler = new Swiper(".real-results-card-slider", {
     loop: true,
     spaceBetween: 25,
     centeredSlides: true,
@@ -319,7 +319,7 @@
   });
 
   // Dental Treatment Review Swiper JS
-  var swiper = new swiper(".dental-treatment-review-slider", {
+  var swiper = new Swiper(".dental-treatment-review-slider", {
     effect: "fade",
     loop: true,
     grabCursor: true,
@@ -334,7 +334,7 @@
   });
 
   // Testimonials Swiper JS
-  var swiper = new swiper(".testimonials-slider", {
+  var swiper = new Swiper(".testimonials-slider", {
     loop: true,
     spaceBetween: 25,
     autoplay: {

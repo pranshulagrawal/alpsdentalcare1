@@ -14,7 +14,7 @@ const Footer = () => {
 
   useEffect(() => {
     // Fetch the data from the data.json file
-    fetch("/data.json")
+    fetch("data.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -73,6 +73,16 @@ const Footer = () => {
                           </a>
                         </li>
                       ))}
+                      <li key="appointment">
+                        <a href="#" onClick={handleNavigate("/appointment")}>
+                          Book Appointment
+                        </a>
+                      </li>
+                      <li key="faq">
+                        <a href="#" onClick={handleNavigate("/faq")}>
+                          Frequently Asked Questions
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
