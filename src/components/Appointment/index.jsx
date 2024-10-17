@@ -1,7 +1,6 @@
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import "./styles.css";
 
 const Appointment = () => {
   const handleSubmit = (e) => {
