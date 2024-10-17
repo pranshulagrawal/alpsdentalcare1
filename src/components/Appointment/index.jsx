@@ -11,7 +11,7 @@ const Appointment = () => {
             <h2>Appointment</h2>
             <ul class="list">
               <li>
-                <a href="">HOME</a>
+                <a>HOME</a>
               </li>
               <li>APPOINTMENT</li>
               <li>NEW PATIENT</li>
@@ -25,11 +25,10 @@ const Appointment = () => {
       <div class="appointment-wrap-area ptb-150">
         <div class="container">
           <form
-            name="appointment"
+            name="appointment v1"
             method="post"
             data-netlify="true"
             onSubmit="submit"
-            netlify
           >
             <div class="appointment-wrap-inner" data-cues="slideInUp">
               <h3>Your Contact Information:</h3>
@@ -66,6 +65,17 @@ const Appointment = () => {
                       class="form-control"
                       name="email"
                       placeholder="Enter your email address"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input
+                      hidden
+                      type="email"
+                      class="form-name"
+                      value="appointment v1"
                     />
                   </div>
                 </div>
