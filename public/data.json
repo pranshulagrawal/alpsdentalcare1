@@ -162,5 +162,61 @@
       "question": "How can I improve my oral hygiene routine?",
       "answer": "At 9 Doral, we believe that a healthy and beautiful smile is a gateway to confidence, well-being, and a vibrant life. Established with a passion for precision dentistry and patient-centered care, our clinic is dedicated to providing comprehensive dental solutions."
     }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. Ethan Reynolds, DDS",
+      "image": "assets/images/doctors/doctors2.jpg",
+      "specialty": "Dentist-Consultant",
+      "email": "ethan@example.com",
+      "social": {
+        "facebook": "https://facebook.com/doctor.ethan",
+        "twitter": "https://twitter.com/doctor.ethan",
+        "instagram": "https://instagram.com/doctor.ethan",
+        "linkedin": "https://linkedin.com/in/doctor.ethan"
+      },
+      "qualifications": "DDS degree from XYZ University",
+      "memberships": [
+        "American Dental Association (ADA)",
+        "Academy of General Dentistry (AGD)"
+      ],
+      "workingTime": [
+        { "day": "Monday - Thursday", "hours": "08:00 - 18:00" },
+        { "day": "Friday", "hours": "08:00 - 18:00" }
+      ],
+      "introduction": "Dr. Ethan is a highly skilled dentist...",
+      "qualificationsDetails": [
+        "DDS degree from XYZ University",
+        "Specialist in restorative dentistry"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Dr. Lauren Mitchell, DMD",
+      "image": "assets/images/doctors/circle1.png",
+      "specialty": "Dentist-Surgeon",
+      "email": "lauren@example.com",
+      "social": {
+        "facebook": "https://facebook.com/doctor.lauren",
+        "twitter": "https://twitter.com/doctor.lauren",
+        "instagram": "https://instagram.com/doctor.lauren",
+        "linkedin": "https://linkedin.com/in/doctor.lauren"
+      },
+      "qualifications": "DMD degree from ABC University",
+      "memberships": [
+        "American Academy of Cosmetic Dentistry",
+        "Academy of Osseointegration"
+      ],
+      "workingTime": [
+        { "day": "Monday - Friday", "hours": "09:00 - 17:00" },
+        { "day": "Saturday", "hours": "09:00 - 12:00" }
+      ],
+      "introduction": "Dr. Lauren is a renowned surgeon...",
+      "qualificationsDetails": [
+        "DMD degree from ABC University",
+        "Expert in cosmetic dentistry"
+      ]
+    }
   ]
 }

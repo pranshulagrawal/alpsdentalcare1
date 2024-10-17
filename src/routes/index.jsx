@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import Preloader from "../components/Preloader";
 import Error from "../components/Error";
 import FAQ from "../components/FAQ";
+import DentistProfile from "../components/Dentist/dentistProfile";
 
 const AppRoutes = () => {
   const [loading, setLoading] = useState(true); // Initially true for the first load
@@ -41,6 +42,7 @@ const AppRoutes = () => {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/dentist-profile/:id" element={<DentistProfile />} />
           <Route path="*" element={<Error />} />
           <Route path="/faq" element={<FAQ />} />
         </Routes>

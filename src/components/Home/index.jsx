@@ -13,6 +13,7 @@ import Doctors from "../Dentist";
 
 const Home = () => {
   const [testimonial, setTestimonial] = useState([]);
+  const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     // Fetch the data from the data.json file
     fetch("data.json")
@@ -24,6 +25,7 @@ const Home = () => {
       })
       .then((data) => {
         setTestimonial(data?.testimonials || []);
+        setDoctors(data?.doctors || []);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -182,7 +184,7 @@ const Home = () => {
             </div>
             <div className="col-xxl-4 col-md-6">
               <div className="category-card">
-                <img src="assets/images/category/category3.jpg" alt="image3" />
+                <img src="assets/images/category/category3.jpg" alt="image1" />
                 <ul className="list">
                   <li>
                     Hours <strong>1 - 1.4</strong>
@@ -648,7 +650,215 @@ const Home = () => {
       <Testimonial />
 
       {/* <!-- Start Doctors Area -->  */}
-      <Doctors />
+      <div class="doctors-area with-bg-transparent pt-150">
+        <div class="container">
+          <div
+            class="row justify-content-center align-items-center"
+            data-cues="slideInUp"
+          >
+            <div class="col-xl-12 col-md-12">
+              <div class="doctors-inner">
+                <h2>Our Expert Dentist</h2>
+                <div class="row justify-content-center" data-cues="slideInUp">
+                  {doctors.map((doctor) => (
+                    <div class="col-lg-3 col-md-6" key={doctor.id}>
+                      <div class="doctors-circle-card">
+                        <div class="doctor-image">
+                          <a href={doctor.image}>
+                            <img src={doctor.image} alt={doctor.name} />
+                          </a>
+                          <ul class="social">
+                            <li>
+                              <a href={doctor.social.facebook} target="_blank">
+                                <i data-feather="facebook"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href={doctor.social.twitter} target="_blank">
+                                <i data-feather="twitter"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href={doctor.social.instagram} target="_blank">
+                                <i data-feather="instagram"></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a href={doctor.social.linkedin} target="_blank">
+                                <i data-feather="linkedin"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="doctor-content">
+                          <h3>
+                            <a href={doctor.image}>{doctor.name}</a>
+                          </h3>
+                          <span>{doctor.specialty}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+
+                  <div class="col-lg-3 col-md-6">
+                    <div class="doctors-circle-card">
+                      <div class="doctor-image">
+                        <a href="dentist-profile.html">
+                          <img
+                            src="assets/images/doctors/circle2.png"
+                            alt="image"
+                          />
+                        </a>
+                        <ul class="social">
+                          <li>
+                            <a
+                              href="../../../www.facebook.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="facebook"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="../../../twitter.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="twitter"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="../../../www.instagram.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="instagram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://bd.linkedin.com/" target="_blank">
+                              <i data-feather="linkedin"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="doctor-content">
+                        <h3>
+                          <a href="dentist-profile.html">
+                            Dr. Ethan Reynolds, DDS
+                          </a>
+                        </h3>
+                        <span>Dentist-Consultant</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="doctors-circle-card">
+                      <div class="doctor-image">
+                        <a href="dentist-profile.html">
+                          <img
+                            src="assets/images/doctors/circle3.png"
+                            alt="image"
+                          />
+                        </a>
+                        <ul class="social">
+                          <li>
+                            <a
+                              href="../../../www.facebook.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="facebook"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="../../../twitter.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="twitter"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="../../../www.instagram.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="instagram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://bd.linkedin.com/" target="_blank">
+                              <i data-feather="linkedin"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="doctor-content">
+                        <h3>
+                          <a href="dentist-profile.html">
+                            Dr. Garrett Hughes, DDS
+                          </a>
+                        </h3>
+                        <span>Dental Technician</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="doctors-circle-card">
+                      <div class="doctor-image">
+                        <a href="dentist-profile.html">
+                          <img
+                            src="assets/images/doctors/circle4.png"
+                            alt="image"
+                          />
+                        </a>
+                        <ul class="social">
+                          <li>
+                            <a
+                              href="../../../www.facebook.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="facebook"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="../../../twitter.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="twitter"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="../../../www.instagram.com/index.html"
+                              target="_blank"
+                            >
+                              <i data-feather="instagram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://bd.linkedin.com/" target="_blank">
+                              <i data-feather="linkedin"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="doctor-content">
+                        <h3>
+                          <a href="dentist-profile.html">
+                            Dr. Bradley Foster, DDS
+                          </a>
+                        </h3>
+                        <span>Maxillofacial Surgeon</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <HomeBlog />
       <Subscribe />
     </>
