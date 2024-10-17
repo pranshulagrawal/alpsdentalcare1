@@ -1,8 +1,34 @@
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import "./styles.css";
 
 const Appointment = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    const formEle = e.target; // Get the form element directly from the event
+    const formData = new FormData(formEle); // Create FormData object
+
+    // Fetch request to the Google Apps Script endpoint
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyem8lb5dyPcjPxVFk_LQ-bKPpfNNYVyd_I7o4UljHx9hCKMEhtsH79h80h4NZvqntp5w/exec",
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data); // Log response from the server
+        // Optionally, you can reset the form or show a success message here
+        formEle.reset(); // Reset the form fields
+      })
+      .catch((error) => {
+        console.log(error); // Log any error that occurs
+      });
+  };
+
   return (
     <>
       <div className="page-banner-area">
@@ -25,11 +51,11 @@ const Appointment = () => {
           <form
             name="appointment v1"
             method="post"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
+            action="/success" // Redirect to a success page or set as appropriate
+            onSubmit={handleSubmit} // Use the modified submit handler
           >
-            {/* Hidden input to specify the form name */}
             <input type="hidden" name="form-name" value="appointment v1" />
+            <input type="hidden" name="bot-field" />
 
             <div className="appointment-wrap-inner" data-cues="slideInUp">
               <h3>Your Contact Information:</h3>
@@ -84,7 +110,7 @@ const Appointment = () => {
                       className="form-select form-control"
                       name="dental-service"
                     >
-                      <option value="" disabled selected>
+                      <option value="" disabled>
                         Choose services
                       </option>
                       <option value="General Dentistry">
